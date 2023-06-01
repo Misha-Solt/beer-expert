@@ -6,7 +6,7 @@ const brandSchema = new Schema({
   brandName: { type: String, required: true },
   url: { type: String, required: true },
   brandDescription: { type: String, required: true },
-  mainAdress: {
+  mainAddress: {
     street: String,
     number: String,
     plz: String,

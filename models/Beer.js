@@ -33,9 +33,9 @@ export const beerSchema = new Schema({
     enum: ['TOP', 'BOTTOM', 'BOTH'],
   },
   beerDescription: { type: String, required: false },
-  abv: { type: Number, required: true },
+  alcoholByVolume: { type: Number, required: true }, //changed abv to alcoholByVolume
   color: {
-    type: string,
+    type: String,
     enum: [
       'LIGHT',
       'DARK',
@@ -89,3 +89,5 @@ export const beerSchema = new Schema({
   },
   avgRating: { type: Number, min: 1, max: 10 },
 })
+
+export default beerSchema

@@ -2,14 +2,18 @@ import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 
+//import router modules into our server
+import beerRoutes from './routes/beerRoutes.js'
+
 dotenv.config()
 
 const app = express()
 const port = 3001
 
+//allows to parse json info from http body to req.body
 app.use(express.json())
 
-// -------------------------------------
+// ------------------------------------- connecting to the database
 mongoose
   .connect(
     `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}/${process.env.DB_NAME}`
@@ -22,6 +26,9 @@ mongoose
     console.log('🤨')
   })
 // -------------------------------------
+
+//start link for the server
+app.use('/api', beerRoutes)
 
 app.listen(port, () => {
   console.log(
