@@ -13,13 +13,9 @@ const port = 3001
 //allows to parse json info from http body to req.body
 app.use(express.json())
 
-<<<<<<< HEAD
 app.use(cors())
 
-// ------------------------------------- connecting to the database
-=======
-// --------------connecting to the database----------------------- 
->>>>>>> 6f34683f61131d968a0d9bb44b32680c498bb334
+// --------------connecting to the database-----------------------
 mongoose
   .connect(
     `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}/${process.env.DB_NAME}`
