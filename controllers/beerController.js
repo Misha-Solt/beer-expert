@@ -16,6 +16,7 @@ export const listBeers = async (req, res) => {
     let allBeers = []
     brands.forEach((brand) => {
       allBeers = [...allBeers, ...brand.beers]
+      // allBeers.push(...brand.beers)
     })
 
     return res.status(StatusCodes.OK).json(allBeers)
@@ -49,6 +50,16 @@ export const listBeersWithBrandName = async (req, res) => {
         allBeers.push(beerWithBrandName)
       })
     })
+
+    // brands.forEach((brand) => {
+    //   brand.beers.forEach((beer) => {
+    //     const fullName = {
+    //       fullBeerName: `${brand.brandName} ${beer.beerName}`,
+    //       brandName: brand.brandName,
+    //     }
+    //     allBeers.push(beer, fullName)
+    //   })
+    // })
 
     return res.status(StatusCodes.OK).json(allBeers)
   } catch (error) {
