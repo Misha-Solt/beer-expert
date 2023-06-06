@@ -7,6 +7,7 @@ import {
   getBeerDetails,
   listBeersWithBrandName,
   filterBeersByType,
+  getRandomBeer,
 } from '../controllers/beerController.js'
 
 //functions for creating and listing brands imported from BRAND controller
@@ -38,6 +39,10 @@ beerRoutes.get('/brands', listBeerBrands)
 //List of all Beers by one Brand
 beerRoutes.get('/beers-by-brand/:brandId', listBeersByBrand)
 
+//GET http://localhost:3001/api/random-beer
+//Random beer button
+beerRoutes.get('/random-beer', getRandomBeer)
+
 //????
 //http://localhost:3001/api/brands/:brandId
 //Detailed description of the selected brand (with all beers information)
@@ -60,7 +65,7 @@ beerRoutes.get('/beers-by-brand/:brandId', listBeersByBrand)
 //   "beers": []
 // }
 
-beerRoutes.post('/add-brand', addBeerBrand) 
+beerRoutes.post('/add-brand', addBeerBrand)
 
 //PATCH http://localhost:3001/api/add-beer/:id ???http://localhost:3001/api/beers/create
 //Add a new beer (Update Brand by Adding a new beer)

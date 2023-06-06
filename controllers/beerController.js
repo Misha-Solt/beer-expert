@@ -51,17 +51,43 @@ export const listBeersWithBrandName = async (req, res) => {
       })
     })
 
-    // brands.forEach((brand) => {
-    //   brand.beers.forEach((beer) => {
-    //     const fullName = {
-    //       fullBeerName: `${brand.brandName} ${beer.beerName}`,
-    //       brandName: brand.brandName,
-    //     }
-    //     allBeers.push(beer, fullName)
-    //   })
-    // })
-
     return res.status(StatusCodes.OK).json(allBeers)
+  } catch (error) {
+    res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .json({ message: error.message })
+  }
+}
+
+/**
+ * Controller function to get a random beer
+ * @param {*} req
+ * @param {*} res
+ */
+export const getRandomBeer = async (req, res) => {
+  try {
+    // const allBeers = await listBeersWithBrandName(req, res) //does not work with reused function listAllBeersWithBrandName
+    // but works with following code:
+    const brands = await Brand.find()
+    let allBeers = []
+
+    brands.forEach((brand) => {
+      const brandName = brand.brandName
+      brand.beers.forEach((beer) => {
+        const fullBeerName = `${brandName} ${beer.beerName}`
+        const beerWithBrandName = {
+          ...beer.toObject(),
+          brandName: brandName,
+          fullBeerName: fullBeerName,
+        }
+        allBeers.push(beerWithBrandName)
+      })
+    })
+
+    const randomBeerIndex = Math.floor(Math.random() * allBeers.length)
+    const randomBeer = allBeers[randomBeerIndex]
+
+    return res.status(StatusCodes.OK).json(randomBeer)
   } catch (error) {
     res
       .status(StatusCodes.INTERNAL_SERVER_ERROR)
@@ -79,9 +105,8 @@ export const getBeerDetails = async (req, res) => {
   const beerId = req.params.beerId
 
   try {
-    const beer = await Brand.findOne({ 'beers._id': beerId })
-      .populate('beers')
-      .exec()
+    const beer = await Brand.findOne({ 'beers._id': beerId }).populate('beers')
+    //.exec()
     if (!beer) {
       return res
         .status(StatusCodes.NOT_FOUND)
@@ -117,7 +142,7 @@ export const listBeersByBrand = async (req, res) => {
   const brandId = req.params.brandId
 
   try {
-    const brand = await Brand.findById(brandId).exec()
+    const brand = await Brand.findById(brandId) //.exec()
     if (!brand) {
       return res
         .status(StatusCodes.NOT_FOUND)
@@ -143,7 +168,7 @@ export const filterBeersByType = async (req, res) => {
   const beerType = req.query.beerType
 
   try {
-    const brands = await Brand.find({ 'beers.beerType': beerType }).exec()
+    const brands = await Brand.find({ 'beers.beerType': beerType }) //.exec()
     const beers = brands.reduce((result, brand) => {
       const filteredBeers = brand.beers.filter(
         (beer) => beer.beerType === beerType //Beer Type here
