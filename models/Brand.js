@@ -10,6 +10,8 @@ const brandSchema = new Schema({
     street: String,
     number: String,
     plz: String,
+    city: String,
+    land: String,
     country: String,
     latitude: Number,
     longitude: Number,

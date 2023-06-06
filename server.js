@@ -1,4 +1,5 @@
 import express from 'express'
+import cors from 'cors'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 
@@ -12,6 +13,8 @@ const port = 3001
 
 //allows to parse json info from http body to req.body
 app.use(express.json())
+
+app.use(cors())
 
 // ------------------------------------- connecting to the database
 mongoose
