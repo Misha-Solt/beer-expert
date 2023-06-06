@@ -7,16 +7,19 @@ import dotenv from 'dotenv'
 import beerRoutes from './routes/beerRoutes.js'
 
 dotenv.config()
-
 const app = express()
 const port = 3001
 
 //allows to parse json info from http body to req.body
 app.use(express.json())
 
+<<<<<<< HEAD
 app.use(cors())
 
 // ------------------------------------- connecting to the database
+=======
+// --------------connecting to the database----------------------- 
+>>>>>>> 6f34683f61131d968a0d9bb44b32680c498bb334
 mongoose
   .connect(
     `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}/${process.env.DB_NAME}`
@@ -28,7 +31,7 @@ mongoose
     console.log(error.message)
     console.log('🤨')
   })
-// -------------------------------------
+// ---------------------------------------------------------------
 
 //start link for the server
 app.use('/api', beerRoutes)
