@@ -16,9 +16,9 @@ app.use(express.json())
 app.use(cors())
 
 // ------------------------------------- connecting to the database
-
-// --------------connecting to the database-----------------------
-
+=======
+// --------------connecting to the database----------------------- 
+>>>>>>> 6f34683f61131d968a0d9bb44b32680c498bb334
 mongoose
   .connect(
     `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}/${process.env.DB_NAME}`
