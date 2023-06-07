@@ -1,5 +1,6 @@
 import { StatusCodes } from 'http-status-codes'
 import mongoose from 'mongoose'
+import { getBeerWithBrandService } from '../services/beerService.js'
 
 import Brand from '../models/Brand.js'
 import Beer from '../models/Beer.js'
@@ -12,11 +13,12 @@ import Beer from '../models/Beer.js'
  */
 export const listBeers = async (req, res) => {
   try {
-    const brands = await Brand.find().exec()
+    const brands = await Brand.find()
     let allBeers = []
     brands.forEach((brand) => {
-      allBeers = [...allBeers, ...brand.beers]
+      // allBeers = [...allBeers, ...brand.beers]
       // allBeers.push(...brand.beers)
+      allBeers = allBeers.concat(brand.beers)
     })
 
     return res.status(StatusCodes.OK).json(allBeers)
@@ -35,31 +37,22 @@ export const listBeers = async (req, res) => {
  */
 export const listBeersWithBrandName = async (req, res) => {
   try {
-    const brands = await Brand.find().exec()
-    let allBeers = []
-
-    brands.forEach((brand) => {
-      const brandName = brand.brandName
-      brand.beers.forEach((beer) => {
-        const fullBeerName = `${brandName} ${beer.beerName}`
-        const beerWithBrandName = {
-          ...beer.toObject(),
-          brandName: brandName,
-          fullBeerName: fullBeerName,
-        }
-        allBeers.push(beerWithBrandName)
-      })
-    })
+    // const brands = await Brand.find().exec()
+    // let allBeers = []
 
     // brands.forEach((brand) => {
+    //   const brandName = brand.brandName
     //   brand.beers.forEach((beer) => {
-    //     const fullName = {
-    //       fullBeerName: `${brand.brandName} ${beer.beerName}`,
-    //       brandName: brand.brandName,
+    //     const fullBeerName = `${brandName} ${beer.beerName}`
+    //     const beerWithBrandName = {
+    //       ...beer.toObject(),
+    //       brandName: brandName,
+    //       fullBeerName: fullBeerName,
     //     }
-    //     allBeers.push(beer, fullName)
+    //     allBeers.push(beerWithBrandName)
     //   })
     // })
+    let allBeers = await getBeerWithBrandService()
 
     return res.status(StatusCodes.OK).json(allBeers)
   } catch (error) {
@@ -78,22 +71,22 @@ export const getRandomBeer = async (req, res) => {
   try {
     // const allBeers = await listBeersWithBrandName(req, res) //does not work with reused function listAllBeersWithBrandName
     // but works with following code:
-    const brands = await Brand.find()
-    let allBeers = []
+    // const brands = await Brand.find()
+    // let allBeers = []
 
-    brands.forEach((brand) => {
-      const brandName = brand.brandName
-      brand.beers.forEach((beer) => {
-        const fullBeerName = `${brandName} ${beer.beerName}`
-        const beerWithBrandName = {
-          ...beer.toObject(),
-          brandName: brandName,
-          fullBeerName: fullBeerName,
-        }
-        allBeers.push(beerWithBrandName)
-      })
-    })
-
+    // brands.forEach((brand) => {
+    //   const brandName = brand.brandName
+    //   brand.beers.forEach((beer) => {
+    //     const fullBeerName = `${brandName} ${beer.beerName}`
+    //     const beerWithBrandName = {
+    //       ...beer.toObject(),
+    //       brandName: brandName,
+    //       fullBeerName: fullBeerName,
+    //     }
+    //     allBeers.push(beerWithBrandName)
+    //   })
+    // })
+    let allBeers = await getBeerWithBrandService()
     const randomBeerIndex = Math.floor(Math.random() * allBeers.length)
     const randomBeer = allBeers[randomBeerIndex]
 
