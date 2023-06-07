@@ -3,7 +3,6 @@ import mongoose from 'mongoose'
 import { getBeerWithBrandService } from '../services/beerService.js'
 
 import Brand from '../models/Brand.js'
-import Beer from '../models/Beer.js'
 
 /**
  * List all Beers (without Brand Name)
