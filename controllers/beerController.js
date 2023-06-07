@@ -1,6 +1,5 @@
 import { StatusCodes } from 'http-status-codes'
-import mongoose from 'mongoose'
-import { getBeerWithBrandService } from '../services/beerService.js'
+import { getBeerWithBrandService } from '../services/getBeerWithBrandService.js'
 
 import Brand from '../models/Brand.js'
 
@@ -36,21 +35,6 @@ export const listBeers = async (req, res) => {
  */
 export const listBeersWithBrandName = async (req, res) => {
   try {
-    // const brands = await Brand.find().exec()
-    // let allBeers = []
-
-    // brands.forEach((brand) => {
-    //   const brandName = brand.brandName
-    //   brand.beers.forEach((beer) => {
-    //     const fullBeerName = `${brandName} ${beer.beerName}`
-    //     const beerWithBrandName = {
-    //       ...beer.toObject(),
-    //       brandName: brandName,
-    //       fullBeerName: fullBeerName,
-    //     }
-    //     allBeers.push(beerWithBrandName)
-    //   })
-    // })
     let allBeers = await getBeerWithBrandService()
 
     return res.status(StatusCodes.OK).json(allBeers)
@@ -68,23 +52,6 @@ export const listBeersWithBrandName = async (req, res) => {
  */
 export const getRandomBeer = async (req, res) => {
   try {
-    // const allBeers = await listBeersWithBrandName(req, res) //does not work with reused function listAllBeersWithBrandName
-    // but works with following code:
-    // const brands = await Brand.find()
-    // let allBeers = []
-
-    // brands.forEach((brand) => {
-    //   const brandName = brand.brandName
-    //   brand.beers.forEach((beer) => {
-    //     const fullBeerName = `${brandName} ${beer.beerName}`
-    //     const beerWithBrandName = {
-    //       ...beer.toObject(),
-    //       brandName: brandName,
-    //       fullBeerName: fullBeerName,
-    //     }
-    //     allBeers.push(beerWithBrandName)
-    //   })
-    // })
     let allBeers = await getBeerWithBrandService()
     const randomBeerIndex = Math.floor(Math.random() * allBeers.length)
     const randomBeer = allBeers[randomBeerIndex]
@@ -144,7 +111,7 @@ export const listBeersByBrand = async (req, res) => {
   const brandId = req.params.brandId
 
   try {
-    const brand = await Brand.findById(brandId) //.exec()
+    const brand = await Brand.findById(brandId)
     if (!brand) {
       return res
         .status(StatusCodes.NOT_FOUND)
