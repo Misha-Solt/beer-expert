@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 
 export const ListAllBrands = () => {
@@ -15,12 +15,6 @@ export const ListAllBrands = () => {
     }
   }
 
-  // const refreshList = async () => {
-  //   console.log('refreshing list')
-
-  //   const res = await axios.get('http://localhost:3001/api/brands')
-  //   setBrands(res.data)
-  // }
   return (
     <div>
       <h1>List of all brands</h1>

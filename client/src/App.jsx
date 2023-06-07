@@ -12,6 +12,7 @@ import AddBeer from './components/AddBeer/AddBeer'
 
 import ListAllBrands from './components/ListAllBrands/ListAllBrands'
 import MoreAboutBeer from './components/MoreAboutBeer/MoreAboutBeer'
+import FindPage from './components/FindPage/FindPage'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/moreAboutBeer" element={<MoreAboutBeer />} />
         <Route path="/addBrand" element={<AddBrand />} />
         <Route path="/addBeer" element={<AddBeer />} />
+        <Route path="/find" element={<FindPage />} />
       </Routes>
     </div>
   )
