@@ -2,7 +2,7 @@ import './App.css'
 
 import { Routes, Route } from 'react-router-dom'
 
-import Header from './components/Header/Header'
+// import Header from './components/Header/Header'
 import MainLayout from './components/MainLayout/MainLayout'
 import Menu from './components/Menu/Menu'
 
@@ -17,7 +17,7 @@ import FindPage from './components/FindPage/FindPage'
 function App() {
   return (
     <div className="App">
-      <Header />
+      {/* <Header /> */}
       <Menu />
       <Routes>
         <Route path="/" element={<MainLayout />} />
