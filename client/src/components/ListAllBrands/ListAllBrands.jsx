@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import BrandCard from './BrandCard'
 
 export const ListAllBrands = () => {
   const [brands, setBrands] = useState([])
@@ -18,11 +19,9 @@ export const ListAllBrands = () => {
   return (
     <div>
       <h1>List of all brands</h1>
-      <ul>
-        {brands.map((brand) => (
-          <li key={brand._id}>{brand.brandName}</li>
-        ))}
-      </ul>
+      {brands.map((brand) => (
+        <BrandCard key={brand._id} brand={brand} />
+      ))}
       <button onClick={refreshList}>Refresh List</button>
     </div>
   )

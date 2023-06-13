@@ -27,7 +27,7 @@ beerRoutes.get('/beers-no-brand', listBeers)
 //List of all beers with brand name
 beerRoutes.get('/beers', listBeersWithBrandName)
 
-//GET http://localhost:3001/api
+//GET http://localhost:3001/api/beers/:beerId
 //Detailed description of the selected beer (with brand information)
 beerRoutes.get('/beers/:beerId', getBeerDetails)
 

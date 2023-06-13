@@ -42,8 +42,8 @@
 .button:hover {
   box-shadow: 0 10px 20px -4px rgba(0, 0, 0, 0.7);
   text-shadow: 0px 0px 2px #000000;
+  text-shadow: rgb(255, 128, 0) 1px 0 6px;
 }
-
 .beer {
   font-weight: bolder;
   color: #cf0000;
