@@ -1,40 +1,24 @@
 .mainLayout {
-  background-color: #f6f8fc;
   font-size: 62.5%;
   box-sizing: border-box;
   min-width: 320px;
-  height: 100vh;
-  /* contain: content; change this to height: 100vh; later */
-  width: 100%;
-  margin: 0;
-  padding: 0;
   display: flex;
   font-family: 'Atkinson Hyperlegible', sans-serif;
-  display: flex;
-  z-index: -1;
-}
-.header {
-  display: inline-block;
-  position: absolute;
-  font-size: 2rem;
-  margin: 15px;
 }
 
 .greeting {
-  display: inline-block;
   position: absolute;
-  left: 5%;
+  left: 20%;
   top: 5%;
   font-size: 8rem;
-  margin-top: 10%;
-  margin-left: 10%;
+  margin: 10%;
 }
 
 .question {
   display: block;
-  position: relative;
-  left: 12%;
-  top: 36%;
+  position: absolute;
+  left: 30%;
+  top: 40%;
   font-size: 3.5rem;
   font-weight: bold;
   color: #556067;
@@ -42,18 +26,28 @@
 
 .button {
   font-weight: bolder;
-  display: inline-block;
   position: absolute;
-  left: 45%;
-  top: 65%;
-  font-size: 5rem;
-  padding: 20px;
+  right: 10%;
+  bottom: 15%;
+  font-size: 3rem;
+  padding: 25px;
   background-color: #ffcc00;
   color: #ff0000;
-  border-radius: 0.5rem;
-  box-shadow: 0px 7px 7px 3px #d4d5d6;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+  border: none;
+  text-shadow: 0px 0px 2px #000000;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 10px;
 }
+.button:hover {
+  box-shadow: 0 10px 20px -4px rgba(0, 0, 0,.7);
+  text-shadow: rgb(255, 128, 0) 1px 0 6px;
+}
+
 .beer {
   font-weight: bolder;
   color: #ff0000;
 }
+
+
