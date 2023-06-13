@@ -14,6 +14,10 @@ import ListAllBrands from './components/ListAllBrands/ListAllBrands'
 import MoreAboutBeer from './components/MoreAboutBeer/MoreAboutBeer'
 import FindPage from './components/FindPage/FindPage'
 
+import RandomBeerPage from './components/RandomBeerPage/RandomBeerPage'
+
+import DetailsPage from './components/Details/DetailsPage'
+
 function App() {
   return (
     <div className="App">
@@ -27,6 +31,9 @@ function App() {
         <Route path="/addBrand" element={<AddBrand />} />
         <Route path="/addBeer" element={<AddBeer />} />
         <Route path="/find" element={<FindPage />} />
+        <Route path="*" element={<h1>404</h1>} />
+        <Route path="/randomBeer" element={<RandomBeerPage />} />
+        <Route path="/randomBeerDetails/" element={<DetailsPage />} />
       </Routes>
     </div>
   )

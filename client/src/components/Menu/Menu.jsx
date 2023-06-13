@@ -5,6 +5,9 @@ const Menu = () => {
     <nav>
       <ul>
         <li>
+          <Link to="/">Main</Link>
+        </li>
+        <li>
           <Link to="/addBeerOrBrand">Add Beer or Brand</Link>
         </li>
         <li>
