@@ -15,8 +15,7 @@ import MoreAboutBeer from './components/MoreAboutBeer/MoreAboutBeer'
 import FindPage from './components/FindPage/FindPage'
 
 import RandomBeerPage from './components/RandomBeerPage/RandomBeerPage'
-
-import DetailsPage from './components/Details/DetailsPage'
+import BeerDetails from './components/Details/BeerDetails'
 
 function App() {
   return (
@@ -33,7 +32,7 @@ function App() {
         <Route path="/find" element={<FindPage />} />
         <Route path="*" element={<h1>404</h1>} />
         <Route path="/randomBeer" element={<RandomBeerPage />} />
-        <Route path="/randomBeerDetails/" element={<DetailsPage />} />
+        <Route path="/randomBeerDetails/:beerId" element={<BeerDetails />} />
       </Routes>
     </div>
   )

@@ -49,3 +49,7 @@
   font-weight: bolder;
   color: #ff0000;
 }
+.link {
+  text-decoration: none;
+  color: #ff0000;
+}
