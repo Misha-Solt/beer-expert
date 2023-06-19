@@ -17,6 +17,7 @@ import FindPage from './components/FindPage/FindPage'
 import RandomBeerPage from './components/RandomBeerPage/RandomBeerPage'
 
 import DetailsPage from './components/Details/DetailsPage'
+import Footer from './components/Footer/Footer'
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path="/randomBeer" element={<RandomBeerPage />} />
         <Route path="/randomBeerDetails/" element={<DetailsPage />} />
       </Routes>
+      <Footer />
     </div>
   )
 }
