@@ -58,7 +58,7 @@
 //Previous code of random beer? which changing by refreshing page and reroll button
 
 import React from 'react'
-import BeerCard from '../BeerCard/BeerCard'
+import BeerCard from '../../elements/BeerCard/BeerCard.jsx'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'

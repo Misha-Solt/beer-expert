@@ -3,20 +3,20 @@ import './App.css'
 import { Routes, Route } from 'react-router-dom'
 
 // import Header from './components/Header/Header'
-import MainLayout from './components/MainLayout/MainLayout'
-import Menu from './components/Menu/Menu'
+import MainLayout from './components/pages/MainLayout/MainLayout.jsx'
+import Menu from './components/elements/Menu/Menu.jsx'
 
-import AddBeerOrBrandPage from './components/AddBeerOrBrandPage/AddBeerOrBrandPage'
-import AddBrand from './components/AddBrand/AddBrand'
-import AddBeer from './components/AddBeer/AddBeer'
+import AddBeerOrBrandPage from './components/pages/AddBeerOrBrandPage/AddBeerOrBrandPage.jsx'
+import AddBrand from './components/pages/AddBrand/AddBrand.jsx'
+import AddBeer from './components/pages/AddBeer/AddBeer.jsx'
 
-import ListAllBrands from './components/ListAllBrands/ListAllBrands'
-import MoreAboutBeer from './components/MoreAboutBeer/MoreAboutBeer'
-import FindPage from './components/FindPage/FindPage'
+import ListAllBrands from './components/pages/ListAllBrands/ListAllBrands.jsx'
+import MoreAboutBeer from './components/pages/MoreAboutBeer/MoreAboutBeer.jsx'
+import FindPage from './components/pages/FindPage/FindPage.jsx'
 
-import RandomBeerPage from './components/RandomBeerPage/RandomBeerPage'
-import Footer from './components/Footer/Footer'
-import BeerDetails from './components/Details/BeerDetails'
+import RandomBeerPage from './components/pages/RandomBeerPage/RandomBeerPage.jsx'
+import Footer from './components/elements/Footer/Footer'
+import BeerDetails from './components/pages/Details/BeerDetails.jsx'
 
 function App() {
   return (

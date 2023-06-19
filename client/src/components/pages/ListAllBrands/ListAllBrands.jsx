@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import BrandCard from './BrandCard'
+import BrandCard from './BrandCard.jsx'
 
 export const ListAllBrands = () => {
   const [brands, setBrands] = useState([])

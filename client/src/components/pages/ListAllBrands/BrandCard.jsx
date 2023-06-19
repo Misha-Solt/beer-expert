@@ -1,5 +1,5 @@
 import React from 'react'
-import BeerCard from '../BeerCard/BeerCard'
+import BeerCard from '../../elements/BeerCard/BeerCard.jsx'
 
 const BrandCard = ({ brand }) => {
   return (
