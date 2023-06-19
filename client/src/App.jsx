@@ -15,7 +15,7 @@ import MoreAboutBeer from './components/pages/MoreAboutBeer/MoreAboutBeer.jsx'
 import FindPage from './components/pages/FindPage/FindPage.jsx'
 
 import RandomBeerPage from './components/pages/RandomBeerPage/RandomBeerPage.jsx'
-import Footer from './components/elements/Footer/Footer'
+import Footer from './components/elements/Footer/Footer.jsx'
 import BeerDetails from './components/pages/Details/BeerDetails.jsx'
 
 function App() {
