@@ -15,6 +15,7 @@ import MoreAboutBeer from './components/MoreAboutBeer/MoreAboutBeer'
 import FindPage from './components/FindPage/FindPage'
 
 import RandomBeerPage from './components/RandomBeerPage/RandomBeerPage'
+import Footer from './components/Footer/Footer'
 import BeerDetails from './components/Details/BeerDetails'
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <Route path="/randomBeer" element={<RandomBeerPage />} />
         <Route path="/randomBeerDetails/:beerId" element={<BeerDetails />} />
       </Routes>
+      <Footer />
     </div>
   )
 }
