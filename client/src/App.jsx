@@ -17,11 +17,6 @@ import FindPage from './components/FindPage/FindPage'
 import RandomBeerPage from './components/RandomBeerPage/RandomBeerPage'
 import Footer from './components/Footer/Footer'
 import BeerDetails from './components/Details/BeerDetails'
-=======
-
-import DetailsPage from './components/Details/DetailsPage'
-import Footer from './components/Footer/Footer'
->>>>>>> cf83128 (Footer added)
 
 function App() {
   return (
