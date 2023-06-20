@@ -8,6 +8,7 @@ import {
   listBeersWithBrandName,
   filterBeersByType,
   getRandomBeer,
+  getEnums,
 } from '../controllers/beerController.js'
 
 //functions for creating and listing brands imported from BRAND controller
@@ -18,6 +19,10 @@ import {
 } from '../controllers/brandController.js'
 
 const beerRoutes = express.Router()
+
+//GET http://localhost:3001/api/enum-values
+//List of all enum values
+beerRoutes.get('/enum-values', getEnums)
 
 //GET http://localhost:3001/api/beers-no-brand
 //List of all beers
