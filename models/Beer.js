@@ -33,9 +33,9 @@ export const beerSchema = new Schema({
     enum: ['TOP', 'BOTTOM', 'BOTH'],
   },
   beerDescription: { type: String, required: false },
-  alcoholByVolume: { type: Number, required: true }, //changed abv to alcoholByVolume
+  alcoholByVolume: { type: Number, required: true },
   color: {
-    type: String,
+    type: [String],
     enum: [
       'LIGHT',
       'DARK',
@@ -50,7 +50,7 @@ export const beerSchema = new Schema({
     required: true,
   },
   mouthfeel: {
-    type: String,
+    type: [String],
     enum: [
       'LIGHT',
       'FRESH',
@@ -67,7 +67,7 @@ export const beerSchema = new Schema({
     required: true,
   },
   aroma: {
-    type: String,
+    type: [String],
     enum: [
       'FRUITY',
       'CITRUS',
@@ -91,3 +91,95 @@ export const beerSchema = new Schema({
 })
 
 export default beerSchema
+
+// export const beerSchema = new Schema({
+//   beerName: { type: String, required: true },
+//   beerType: {
+//     type: String,
+//     enum: [
+//       'WEIZEN',
+//       'SCHWARZ',
+//       'HLAGER',
+//       'EXPORT',
+//       'DLAGER',
+//       'KOELSCH',
+//       'WBOCK',
+//       'EBOCK',
+//       'BOCK',
+//       'BERLINERWEIS',
+//       'ALT',
+//       'PILS',
+//       'ZOIGL',
+//       'MAERZEN',
+//       'RAUCH',
+//       'STOUT',
+//       'PORTER',
+//       'PALEALE',
+//       'ZWICKEL',
+//       'RADLER',
+//     ],
+//   },
+//   fermentedType: {
+//     type: String,
+//     required: true,
+//     enum: ['TOP', 'BOTTOM', 'BOTH'],
+//   },
+//   beerDescription: { type: String, required: false },
+//   alcoholByVolume: { type: Number, required: true }, //changed abv to alcoholByVolume
+//   color: {
+//     type: String,
+//     enum: [
+//       'LIGHT',
+//       'DARK',
+//       'AMBER',
+//       'CLOUDY',
+//       'YELLOW',
+//       'BROWN',
+//       'GOLD',
+//       'BLACK',
+//       'MAHOGANY',
+//     ],
+//     required: true,
+//   },
+//   mouthfeel: {
+//     type: String,
+//     enum: [
+//       'LIGHT',
+//       'FRESH',
+//       'SWEET',
+//       'FULL-BODIED',
+//       'SMOOTH',
+//       'SOFT',
+//       'SPARKLING',
+//       'STRONG',
+//       'OILY',
+//       'TANGY',
+//       'SUBTLE',
+//     ],
+//     required: true,
+//   },
+//   aroma: {
+//     type: String,
+//     enum: [
+//       'FRUITY',
+//       'CITRUS',
+//       'FLOWERY',
+//       'HOPPY',
+//       'MALTY',
+//       'CARAMEL',
+//       'BERRIES',
+//       'COFFEE',
+//       'CHOCOLATE',
+//       'SMOKE',
+//       'HERBAL',
+//       'SOUR',
+//       'BREAD',
+//       'ROASTED',
+//       'BITTERNESS',
+//     ],
+//     required: true,
+//   },
+//   avgRating: { type: Number, min: 1, max: 10 },
+// })
+
+// export default beerSchema

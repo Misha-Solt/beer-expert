@@ -19,7 +19,7 @@ export default function RandomBeerPage() {
     } else {
       fetchRandomBeer()
     }
-  }, [])
+  }, []) //warning here
 
   const fetchRandomBeer = async () => {
     try {

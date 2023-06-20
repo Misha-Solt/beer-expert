@@ -2,6 +2,7 @@ import { StatusCodes } from 'http-status-codes'
 import { getBeerWithBrandService } from '../services/getBeerWithBrandService.js'
 
 import Brand from '../models/Brand.js'
+import beerSchema from '../models/Beer.js'
 
 /**
  * List all Beers (without Brand Name)
@@ -152,3 +153,43 @@ export const filterBeersByType = async (req, res) => {
       .json({ message: error.message })
   }
 }
+
+/**
+ * controller for getting enum values
+ * @param {*} req
+ * @param {*} res
+ */
+//Last improved version that fetches all the data from the beerSchema
+export const getEnums = async (req, res) => {
+  const enums = {}
+  // Fetch the enum values for each property in the beerSchema
+  Object.keys(beerSchema.paths).forEach((path) => {
+    if (beerSchema.paths[path].instance === 'Array') {
+      enums[path] = beerSchema.paths[path].caster.enumValues
+    } else if (beerSchema.paths[path].enumValues) {
+      enums[path] = beerSchema.paths[path].enumValues
+    }
+  })
+
+  res.json(enums)
+}
+
+//   Improved version that shows enums, bt don't show Arrays of enums
+
+// export const getEnums = async (req, res) => {
+//   const enums = {}
+//   Object.keys(beerSchema.paths).forEach((path) => {
+//     if (beerSchema.paths[path].enumValues) {
+//       enums[path] = beerSchema.paths[path].enumValues
+//     }
+//   })
+
+//   res.json(enums)
+// }
+
+//Very first version that shows by type
+
+// export const getEnums = async (req, res) => {
+//   const { enumValues } = beerSchema.path('beerType')
+//   res.json(enumValues)
+// }
