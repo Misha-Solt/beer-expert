@@ -1,0 +1,57 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 75px;
+  box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.15);
+  background-color: var(--background);
+  inset: 0px 20px 0px 20px;
+  border-radius: 0 0 12px 12px;
+}
+.left {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.right {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.name {
+  color: var(--grey);
+  text-decoration: none;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  padding: 0 20px;
+}
+.flag {
+  margin-bottom: 12px;
+}
+.switch {
+  margin-bottom: 12px;
+}
+
+.login {
+  background-color: var(--yellow);
+  padding: 7px 30px;
+  margin: 9px 15px 0 15px;
+  color: var(--grey);
+  font-size: 1.4rem;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.login:hover {
+  text-shadow: rgb(100, 100, 100) 1px 0 1px;
+  box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.7);
+}

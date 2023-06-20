@@ -2,7 +2,7 @@ import './App.css'
 
 import { Routes, Route } from 'react-router-dom'
 
-// import Header from './components/Header/Header'
+import Header from './components/elements/Header/Header'
 import MainLayout from './components/pages/MainLayout/MainLayout.jsx'
 import Menu from './components/elements/Menu/Menu.jsx'
 
@@ -21,7 +21,7 @@ import BeerDetails from './components/pages/Details/BeerDetails.jsx'
 function App() {
   return (
     <div className="App">
-      {/* <Header /> */}
+      <Header />
       <Menu />
       <Routes>
         <Route path="/" element={<MainLayout />} />

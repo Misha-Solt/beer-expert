@@ -1,11 +1,26 @@
-import React from 'react'
+import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher'
+import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher'
+import styles from './header.module.css'
 
-export default function Header() {
+const Header = () => {
   return (
-    <div>
-      <h1>Beer-expert Header Title something else</h1>
-      <h1>Header Title</h1>
-      <h2>Beer-expert Header somewhere here. Beer theme change. Login</h2>
-    </div>
+    <header className={styles.header}>
+      <div className={styles.left}>
+        <a href="." className={styles.name}>
+          beer-expert
+        </a>
+        <div className={styles.flag}>
+          <LanguageSwitcher />
+        </div>
+      </div>
+      <div className={styles.right}>
+        <div className={styles.switch}>
+          <ThemeSwitcher />
+        </div>
+        <div className={styles.login}>Login</div>
+      </div>
+    </header>
   )
 }
+
+export default Header

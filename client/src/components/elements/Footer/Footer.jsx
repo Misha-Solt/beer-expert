@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './footer.module.css'
 
 const Footer = () => {
@@ -14,9 +13,9 @@ const Footer = () => {
         </div>
       </section>
       <section className={styles.textSection}>
-          <div className={styles.textElement}>Datenschutz</div>
-          <div className={styles.textElement}>Impressum</div>
-          <div className={styles.textElement}>Copyright</div>
+        <div className={styles.textElement}>Datenschutz</div>
+        <div className={styles.textElement}>Impressum</div>
+        <div className={styles.textElement}>Copyright</div>
       </section>
     </div>
   )
