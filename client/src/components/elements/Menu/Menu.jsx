@@ -15,7 +15,7 @@ const Menu = () => {
     <nav className={activeMenu ? 'menu' : 'menu active'}>
       <div className="hamburger" onClick={handleClick}></div>
       <div className="list">
-        <NavLink className="navLink" to="." end>
+        <NavLink className="navLink" to="/" end>
           <div className="element">
             <span className="icon">
               <FaHome />

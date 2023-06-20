@@ -6,7 +6,7 @@
 .menu {
   position: fixed;
   inset: 15% 0 40px 20px;
-  background-color: #ffcc00;
+  background-color: var(--yellow);
   width: 75px;
   height: 450px;
   display: flex;
@@ -37,7 +37,7 @@
   position: absolute;
   width: 30px;
   height: 3px;
-  background: #cf0000;
+  background: var(--red);
   transform: translateY(-8px);
   transition: 0.5s;
 }
@@ -49,14 +49,14 @@
   position: absolute;
   width: 30px;
   height: 3px;
-  background: #cf0000;
+  background: var(--red);
   transform: translateY(8px);
-  box-shadow: 0 -8px 0 #cf0000;
+  box-shadow: 0 -8px 0 var(--red);
   transition: 0.5s;
 }
 .menu.active .hamburger::after {
   transform: translateY(0) rotate(-45deg);
-  box-shadow: 0 0px 0 #cf0000;
+  box-shadow: 0 0px 0 var(--red);
 }
 .list {
   display: flex;
@@ -79,7 +79,7 @@
 }
 .navLink.active {
   transform: translateX(30px);
-  background-color: #f6f8fc;
+  background-color: var(--background);
 }
 .navLink::before {
   content: '';
@@ -90,7 +90,7 @@
   height: 20px;
   background-color: transparent;
   border-bottom-right-radius: 20px;
-  box-shadow: 6px 5px 0 5px #f6f8fc;
+  box-shadow: 6px 5px 0 5px var(--background);
   transform: scale(0);
   transform-origin: bottom right;
   transition: 0.5s;
@@ -109,7 +109,7 @@
   height: 20px;
   background-color: transparent;
   border-top-right-radius: 20px;
-  box-shadow: 6px -3px 0 3px #f6f8fc;
+  box-shadow: 6px -3px 0 3px var(--background);
   transform: scale(0);
   transform-origin: bottom right;
   transition: 0.5s;
@@ -140,8 +140,8 @@
   transition: 0.5s;
 }
 .navLink.active .icon {
-  background-color: #cf0000;
-  color: black;
+  background-color: var(--red);
+  color: var(--black);
 }
 .icon::before {
   content: '';
@@ -150,7 +150,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #cf0000;
+  background-color: var(--red);
   filter: blur(8px);
   opacity: 0;
   transition: 0.5s;
@@ -165,14 +165,14 @@
   left: -60px;
   width: 15px;
   height: 15px;
-  background-color: #cf0000;
-  border: 8px solid #f6f8fc;
+  background-color: var(--red);
+  border: 8px solid var(--background);
   border-radius: 50%;
 }
 .text {
   position: relative;
   padding: 0 15px;
-  color: black;
+  color: var(--black);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -186,5 +186,5 @@
   opacity: 1;
 }
 .navLink.active .text{
-  color: #cf0000;
+  color: var(--red);
 }
