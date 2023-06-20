@@ -1,7 +1,7 @@
 import React from 'react'
-import AddBrand from '../AddBrand/AddBrand'
+import AddBrand from '../AddBrand/AddBrand.jsx'
 import { Link } from 'react-router-dom'
-import AddBeer from '../AddBeer/AddBeer'
+import AddBeer from '../AddBeer/AddBeer.jsx'
 
 export default function AddBeerOrBrandPage() {
   return (
