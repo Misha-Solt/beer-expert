@@ -1,1 +1,89 @@
+.container {
+  margin-top: 100px;
+  margin-left: 250px;
+  width: 70%;
+  box-sizing: border-box;
+  box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 40px;
+}
 
+.selectField {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: var(--gray);
+  margin-bottom: 30px;
+  /* border: none; */
+  /* border-bottom: 2px solid var(--red); */
+  border: 2px solid var(--red);
+  border-radius: 12px;
+  outline: none;
+  background: transparent;
+}
+
+.addBeerHeader {
+  text-align: center;
+}
+
+.selectBeerProp {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: var(--gray);
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 2px solid var(--red);
+  outline: none;
+  background: transparent;
+}
+
+.brandBox {
+  position: relative;
+}
+
+.inputField {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: var(--black);
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 2px solid var(--red);
+  outline: none;
+  background: transparent;
+}
+
+.beerLabel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: var(--black);
+  pointer-events: none;
+  transition: top 0.5s, left 0.5s, color 0.5s, font-size 0.5s;
+}
+
+.inputField:focus ~ .beerLabel,
+.inputField:valid ~ .beerLabel {
+  top: -20px;
+  left: 0;
+  color: var(--black);
+  font-size: 12px;
+}
+
+.optionContainer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.optionCheckbox {
+  margin: 10px;
+  padding: 5px;
+  border-radius: 12px;
+  background: var(--yellow);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+}

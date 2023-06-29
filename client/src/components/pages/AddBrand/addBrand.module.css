@@ -1,0 +1,74 @@
+.brandContainer {
+  margin-top: 100px;
+  margin-left: 250px;
+  width: 70%;
+  box-sizing: border-box;
+  box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 40px;
+}
+
+.brandContainer h1 {
+  margin: 0 0 30px;
+  text-align: center;
+}
+
+.brandContainer .brandBox {
+  position: relative;
+}
+
+.brandInput {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: var(--black);
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 2px solid var(--red);
+  outline: none;
+  background: transparent;
+}
+
+.brandLabel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: var(--black);
+  pointer-events: none;
+  transition: top 0.5s, left 0.5s, color 0.5s, font-size 0.5s;
+}
+
+.brandInput:focus ~ .brandLabel,
+.brandInput:valid ~ .brandLabel {
+  top: -20px;
+  left: 0;
+  color: var(--black);
+  font-size: 12px;
+}
+
+#mainAddressHeader {
+  margin-bottom: 20px;
+}
+
+.formButton {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 15px 30px;
+  background-color: var(--yellow);
+  box-shadow: 0 10px 20px -8px var(--grey);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 12px;
+}
+.formButton:hover {
+  box-shadow: 0 10px 20px -4px var(--grey);
+  text-shadow: var(--grey) 1px 0 3px;
+}
+.buttonBox {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}

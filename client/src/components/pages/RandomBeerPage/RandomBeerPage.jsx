@@ -1,6 +1,6 @@
 // code with stored random beer that can be changed only by reroll button
 import React, { useState, useEffect } from 'react'
-import BeerCard from '../BeerCard/BeerCard'
+import BeerCard from '../../elements/BeerCard/BeerCard'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
@@ -15,7 +15,6 @@ export default function RandomBeerPage() {
 
       const { _id } = JSON.parse(storedRandomBeer)
       setBeerId(_id)
-      console.log(beerId)
     } else {
       fetchRandomBeer()
     }
