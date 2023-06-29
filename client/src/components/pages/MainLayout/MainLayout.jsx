@@ -1,5 +1,5 @@
+import RandomButton from '../../elements/RandomButton/RandomButton.jsx'
 import styles from './mainLayout.module.css'
-import { Link } from 'react-router-dom'
 
 const MainLayout = () => {
   return (
@@ -9,11 +9,8 @@ const MainLayout = () => {
         Today is a great time for a <span className={styles.beer}>beer;)</span>{' '}
         Isn't it?
       </h3>
-      <button className={styles.button}>
-        <Link to="/randomBeer" className={styles.link}>
-          Absolutely!
-        </Link>
-      </button>
+      <RandomButton />
+      
     </div>
   )
 }

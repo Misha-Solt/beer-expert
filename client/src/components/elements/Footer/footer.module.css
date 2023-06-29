@@ -1,12 +1,10 @@
 .footer {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  min-height: 100vh;
-  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* min-height: 100vh; */
 }
 .waveSection {
-  position: relative;
   width: 100%;
 }
 .waves {
@@ -79,6 +77,7 @@
 
 .textSection {
   position: absolute;
+  bottom: 0;
   width: 100%;
   z-index: 1001;
   display: flex;

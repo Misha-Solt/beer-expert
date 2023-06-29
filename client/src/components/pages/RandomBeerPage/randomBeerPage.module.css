@@ -1,0 +1,12 @@
+.container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+  height: 80%;
+  margin: 100px 0px 0px 100px;
+}
+.randomBeerPage {
+
+}
