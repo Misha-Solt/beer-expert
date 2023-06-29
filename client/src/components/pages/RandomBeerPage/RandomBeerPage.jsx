@@ -1,8 +1,9 @@
 // code with stored random beer that can be changed only by reroll button
 import React, { useState, useEffect } from 'react'
-import BeerCard from '../BeerCard/BeerCard'
+import BeerCard from '../../elements/BeerCard/BeerCard.jsx'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import styles from './randomBeerPage.module.css'
 
 export default function RandomBeerPage() {
   const [randomBeer, setRandomBeer] = useState(null)
@@ -15,11 +16,10 @@ export default function RandomBeerPage() {
 
       const { _id } = JSON.parse(storedRandomBeer)
       setBeerId(_id)
-      console.log(beerId)
     } else {
       fetchRandomBeer()
     }
-  }, []) //warning here
+  }, [])
 
   const fetchRandomBeer = async () => {
     try {
@@ -40,18 +40,20 @@ export default function RandomBeerPage() {
   }
 
   return (
-    <div>
-      {randomBeer && <BeerCard beer={randomBeer} />}
-      <button onClick={rerollRandomBeer}>Reroll</button>
-      <button>
-        <Link to={`/randomBeerDetails/${beerId}`}>More</Link>
-      </button>
-      <button>
-        <Link to="/">Back</Link>
-      </button>
-      <button>
-        <Link to="/find">Find a Beer</Link>
-      </button>
+    <div className={styles.container}>
+      <div className={styles.randomBeerPage}>
+        {randomBeer && <BeerCard beer={randomBeer} />}
+        <button onClick={rerollRandomBeer}>Reroll</button>
+        <button>
+          <Link to={`/randomBeerDetails/${beerId}`}>More</Link>
+        </button>
+        <button>
+          <Link to="/">Back</Link>
+        </button>
+        <button>
+          <Link to="/find">Find a Beer</Link>
+        </button>
+      </div>
     </div>
   )
 }

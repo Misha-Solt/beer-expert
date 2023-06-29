@@ -7,4 +7,5 @@ body {
     'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   background-color: #f6f8fc;
   height: 100vh;
+  z-index: -100;
 }

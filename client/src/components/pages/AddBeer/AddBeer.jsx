@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
 import './addBeer.module.css'
 import React, { useState, useEffect } from 'react'
 

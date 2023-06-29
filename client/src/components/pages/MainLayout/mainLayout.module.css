@@ -8,10 +8,9 @@
 
 .greeting {
   position: absolute;
-  left: 20%;
-  top: 5%;
+  left: 25%;
+  top: 13%;
   font-size: 8rem;
-  margin: 10%;
 }
 
 .question {
@@ -19,36 +18,13 @@
   text-align: start;
   position: absolute;
   right: 15%;
-  left: 30%;
-  top: 40%;
+  left: 25%;
+  top: 35%;
   font-size: 3.5rem;
   font-weight: 700;
   color: var(--grey);
 }
-
-.button {
-  font-weight: 700;
-  position: absolute;
-  right: 10%;
-  bottom: 25%;
-  font-size: 3rem;
-  padding: 15px 30px;
-  background-color: #ffcc00;
-  box-shadow: 0 10px 20px -8px var(--grey);
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s;
-  border-radius: 12px;
-}
-.button:hover {
-  box-shadow: 0 10px 20px -4px var(--grey);
-  text-shadow: var(--grey) 1px 0 3px;
-}
 .beer {
   font-weight: bolder;
   color: var(--red);
-}
-.link {
-  text-decoration: none;
-  color: var(--black);
 }

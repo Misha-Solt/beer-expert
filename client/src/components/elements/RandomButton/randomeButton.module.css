@@ -1,0 +1,493 @@
+.button {
+  font-weight: 700;
+  width: 430px;
+  position: absolute;
+  right: 10%;
+  bottom: 20%;
+  font-size: 3rem;
+  padding: 20px 30px;
+  background-color: var(--grey);
+  box-shadow: 0 10px 20px -8px var(--grey);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.button:hover {
+  box-shadow: 0 10px 20px -4px var(--grey);
+  text-shadow: var(--grey) 1px 0 3px;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--yellow);
+}
+.emptyBeerGlass {
+  height: 115px;
+  margin-right: 40px;
+  display: block;
+}
+.button.loading .emptyBeerGlass {
+  display: none;
+}
+#emptyGlass {
+  width: 70px;
+  height: 90px;
+  background: transparent;
+  border: solid 4px white;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  position: relative;
+  top: 19px;
+  overflow: hidden;
+}
+#emptyHandle {
+  width: 30px;
+  height: 55px;
+  background: transparent;
+  border: solid 3.5px white;
+  position: relative;
+  top: -58px;
+  left: 67px;
+  border-radius: 0 16px 16px 0;
+  border-left: none;
+}
+.beerGlass {
+  height: 115px;
+  margin-right: 40px;
+  display: none;
+}
+.button.loading .beerGlass {
+  display: block;
+}
+#glass {
+  width: 70px;
+  height: 90px;
+  background: transparent;
+  border: solid 4px white;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  position: relative;
+  top: 19px;
+  overflow: hidden;
+  transform: rotate(-20deg);
+  animation: glass 10s infinite;
+}
+
+#handle {
+  width: 30px;
+  height: 55px;
+  background: transparent;
+  border: solid 3.5px white;
+  position: relative;
+  top: -77px;
+  left: 63px;
+  border-radius: 0 16px 16px 0;
+  border-left: none;
+  transform: rotate(-20deg);
+  animation: handle 10s infinite;
+}
+
+#beer {
+  width: 53px;
+  height: 82px;
+  background: transparent;
+  position: absolute;
+  left: 5px;
+  top: 0px;
+  border-radius: 0 0 5px 5px;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    width: 250px;
+    height: 250px;
+    background: #e8b504;
+    position: absolute;
+    top: 83px;
+    left: -190px;
+    transform: rotate(40deg);
+    animation: beer 10s infinite;
+  }
+}
+
+#foam1 {
+  position: absolute;
+  top: 32px;
+  left: 22px;
+  z-index: 2;
+
+  &::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    animation: foam 10s infinite;
+  }
+
+  &::after {
+    content: '';
+    width: 17px;
+    height: 17px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    animation: foam 10s infinite;
+  }
+}
+
+#foam2 {
+  position: absolute;
+  top: 32px;
+  left: 36px;
+  z-index: 2;
+
+  &::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    animation: foam 10s infinite;
+  }
+
+  &::after {
+    content: '';
+    width: 17px;
+    height: 17px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    left: 10px;
+    animation: foam 10s infinite;
+  }
+}
+
+#foam3 {
+  position: absolute;
+  top: 32px;
+  left: 52px;
+  z-index: 2;
+
+  &::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    animation: foam 10s infinite;
+  }
+
+  &::after {
+    content: '';
+    width: 17px;
+    height: 17px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    animation: foam 10s infinite;
+  }
+}
+
+#foam4 {
+  position: absolute;
+  top: 32px;
+  left: 66px;
+  z-index: 2;
+
+  &::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    animation: foam 10s infinite;
+  }
+
+  &::after {
+    content: '';
+    width: 17px;
+    height: 17px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    animation: foam 10s infinite;
+  }
+}
+
+#foam5 {
+  position: absolute;
+  top: 32px;
+  left: 83px;
+  z-index: 2;
+  animation: foam 10s infinite;
+
+  &::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+  }
+}
+
+#foamOut {
+  position: absolute;
+  top: 35px;
+  left: 38px;
+  z-index: 3;
+
+  &::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    animation: foamOut 10s infinite;
+  }
+
+  &::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    left: 40px;
+    animation: foamOut 10s infinite;
+  }
+}
+
+#foamIn {
+  position: absolute;
+  top: 95px;
+  left: 44px;
+  z-index: 1;
+  opacity: 0.9;
+
+  &::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    animation: foamIn 10s infinite;
+  }
+
+  &::after {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    animation: foamIn 5s infinite;
+  }
+}
+
+#foamIn2 {
+  position: absolute;
+  top: 75px;
+  left: 51px;
+  z-index: 2;
+  opacity: 0.9;
+
+  &::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    animation: foamIn 10s infinite;
+  }
+
+  &::after {
+    content: '';
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 17px;
+    animation: foamIn 5s infinite;
+  }
+}
+
+#foamIn3 {
+  position: absolute;
+  top: 85px;
+  left: 58px;
+  z-index: 2;
+  opacity: 0.9;
+
+  &::before {
+    content: '';
+    width: 9px;
+    height: 9px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    animation: foamIn 10s infinite;
+  }
+
+  &::after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    animation: foamIn 5s infinite;
+  }
+}
+
+#foamIn4 {
+  position: absolute;
+  top: 81px;
+  left: 64px;
+  z-index: 2;
+  opacity: 0.9;
+
+  &::before {
+    content: '';
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    animation: foamIn 10s infinite;
+  }
+
+  &::after {
+    content: '';
+    width: 5.5px;
+    height: 5.5px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 28px;
+    left: 2px;
+    animation: foamIn 5s infinite;
+  }
+}
+
+@keyframes beer {
+  0% {
+    transform: translateY(-5);
+  }
+  17% {
+    transform: translateY(-82px);
+  }
+  100% {
+    transform: translateY(-82px);
+  }
+}
+
+@keyframes glass {
+  0% {
+    transform: rotate(-20deg);
+  }
+
+  17% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes handle {
+  0% {
+    transform: rotate(-20deg);
+  }
+  17% {
+    transform: rotate(0deg) translateX(5px) translateY(20px);
+  }
+
+  100% {
+    transform: rotate(0deg) translateX(5px) translateY(20px);
+  }
+}
+
+@keyframes foam {
+  0% {
+    transform: scale(0);
+  }
+  10% {
+    transform: scale(0);
+  }
+  20% {
+    transform: scale(1);
+  }
+}
+
+@keyframes foamOut {
+  0% {
+    transform: scale(0) translateY(0px);
+  }
+  10% {
+    transform: scale(0) translateY(0px);
+  }
+  20% {
+    transform: scale(1) translateY(-20px);
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1) translateY(-80px);
+    opacity: 0;
+  }
+}
+
+@keyframes foamIn {
+  0% {
+    transform: scale(0) translateY(0px);
+  }
+  20% {
+    transform: scale(0) translateY(0px);
+  }
+  40% {
+    transform: scale(1) translateY(-60px);
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1) translateY(-60px);
+    opacity: 0;
+  }
+}
