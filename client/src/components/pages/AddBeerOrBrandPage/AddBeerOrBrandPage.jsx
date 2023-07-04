@@ -8,10 +8,10 @@ export default function AddBeerOrBrandPage() {
   return (
     <div className={styles.addButtonBox}>
       <Link to="/addBrand" element={<AddBrand />}>
-        <button>Add Brand</button>
+        <button className={styles.addButton}>Add Brand</button>
       </Link>
       <Link to="/addBeer" element={<AddBeer />}>
-        <button>Add Beer</button>
+        <button className={styles.addButton}>Add Beer</button>
       </Link>
     </div>
   )

@@ -3,3 +3,16 @@
   display: flex;
   justify-content: center;
 }
+
+.addButton {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 15px 30px;
+  background-color: var(--yellow);
+  box-shadow: 0 10px 20px -8px var(--grey);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 12px;
+  margin: 20px;
+}

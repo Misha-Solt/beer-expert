@@ -72,19 +72,56 @@
   font-size: 12px;
 }
 
-.optionContainer {
+.checkboxContainer {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  align-content: space-around;
   flex-wrap: wrap;
-  margin: 10px;
+  gap: 2rem;
+  margin: 15px;
+}
+
+.optionCheckbox:checked + .checkboxLabel {
+  background: var(--red);
+  color: white;
+}
+.checkboxLabel {
+  font-size: 16px;
+  color: var(--gray);
+  background: var(--yellow);
+  padding: 8px 15px;
+  border-radius: 12px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+  text-transform: lowercase;
+  font-weight: 400;
+  cursor: pointer;
 }
 
 .optionCheckbox {
-  margin: 10px;
-  padding: 5px;
+  display: none;
+}
+
+#addBeerButton {
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 15px 30px;
+  background-color: var(--yellow);
+  box-shadow: 0 10px 20px -8px var(--grey);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
   border-radius: 12px;
-  background: var(--yellow);
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+}
+
+#addBeerButton:hover {
+  box-shadow: 0 10px 20px -4px var(--grey);
+  text-shadow: var(--grey) 1px 0 3px;
+}
+.buttonBox {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
 .empty {
   display: block;

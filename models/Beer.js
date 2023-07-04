@@ -52,7 +52,7 @@ export const beerSchema = new Schema({
   mouthfeel: {
     type: [String],
     enum: [
-      'LIGHT',
+      'LIGHTNESS',
       'FRESH',
       'SWEET',
       'FULL-BODIED',

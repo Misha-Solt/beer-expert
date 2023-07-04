@@ -118,15 +118,17 @@ const AddBeerForm = () => {
   const generateAromaColorMouthfeelOptions = (property) => {
     if (enumValues[property]) {
       return enumValues[property].map((value) => (
-        <div className={styles.optionCheckbox} key={value}>
-          <label key={value}>
-            <input
-              type="checkbox"
-              name={property}
-              value={value}
-              checked={beerData[property].includes(value)}
-              onChange={handleCheckboxChange}
-            />
+        <div key={value}>
+          <input
+            className={styles.optionCheckbox}
+            type="checkbox"
+            id={value}
+            name={property}
+            value={value}
+            checked={beerData[property].includes(value)}
+            onChange={handleCheckboxChange}
+          />
+          <label htmlFor={value} className={styles.checkboxLabel}>
             {value}
           </label>
         </div>
@@ -238,25 +240,25 @@ const AddBeerForm = () => {
               />
               <label className={styles.beerLabel}>Alcohol by Volume</label>
             </div>
-            <label>
-              Color:
-              <div className={styles.optionContainer}>
-                {generateAromaColorMouthfeelOptions('color')}
-              </div>
-            </label>
-            <label>
-              Mouthfeel:
-              <div className={styles.optionContainer}>
-                {generateAromaColorMouthfeelOptions('mouthfeel')}
-              </div>
-            </label>
-            <label>
-              Aroma:
-              <div className={styles.optionContainer}>
-                {generateAromaColorMouthfeelOptions('aroma')}
-              </div>
-            </label>
-            <button type="submit">Add Beer</button>
+            <p>Color:</p>
+            <div className={styles.checkboxContainer}>
+              {generateAromaColorMouthfeelOptions('color')}
+            </div>
+
+            <p>Mouthfeel:</p>
+            <div className={styles.checkboxContainer}>
+              {generateAromaColorMouthfeelOptions('mouthfeel')}
+            </div>
+
+            <p>Aroma:</p>
+            <div className={styles.checkboxContainer}>
+              {generateAromaColorMouthfeelOptions('aroma')}
+            </div>
+            <div className={styles.buttonBox}>
+              <button id={styles.addBeerButton} type="submit">
+                Add Beer
+              </button>
+            </div>
           </form>
         )}
       </div>
