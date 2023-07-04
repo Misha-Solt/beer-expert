@@ -168,97 +168,100 @@ const AddBeerForm = () => {
   }
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.addBeerHeader}>Add Beer</h1>
-      <select
-        value={selectedBrand}
-        onChange={handleBrandChange}
-        className={styles.selectField}
-      >
-        <option value="">Select a brand</option>
-        {brands.map((brand) => (
-          <option key={brand._id} value={brand._id}>
-            {brand.brandName}
-          </option>
-        ))}
-      </select>
-      {selectedBrand && (
-        <form onSubmit={handleSubmit} className={styles.formContainer}>
-          <div className={styles.brandBox}>
-            <input
-              className={styles.inputField}
-              type="text"
-              name="beerName"
-              required
-              value={beerData.beerName}
+    <>
+      <div className={styles.container}>
+        <h1 className={styles.addBeerHeader}>Add Beer</h1>
+        <select
+          value={selectedBrand}
+          onChange={handleBrandChange}
+          className={styles.selectField}
+        >
+          <option value="">Select a brand</option>
+          {brands.map((brand) => (
+            <option key={brand._id} value={brand._id}>
+              {brand.brandName}
+            </option>
+          ))}
+        </select>
+        {selectedBrand && (
+          <form onSubmit={handleSubmit} className={styles.formContainer}>
+            <div className={styles.brandBox}>
+              <input
+                className={styles.inputField}
+                type="text"
+                name="beerName"
+                required
+                value={beerData.beerName}
+                onChange={handleInputChange}
+              />
+              <label className={styles.beerLabel}>Beer Name</label>
+            </div>
+            <select
+              className={styles.selectBeerProp}
+              name="beerType"
+              value={beerData.beerType}
               onChange={handleInputChange}
-            />
-            <label className={styles.beerLabel}>Beer Name</label>
-          </div>
-          <select
-            className={styles.selectBeerProp}
-            name="beerType"
-            value={beerData.beerType}
-            onChange={handleInputChange}
-          >
-            <option value="">Select beer type</option>
-            {generateOptions('beerType')}
-          </select>
-          <select
-            className={styles.selectBeerProp}
-            name="fermentedType"
-            value={beerData.fermentedType}
-            onChange={handleInputChange}
-          >
-            <option value="">Select fermented type</option>
-            {generateOptions('fermentedType')}
-          </select>
-          <div className={styles.brandBox}>
-            <textarea
-              className={styles.inputField}
-              name="beerDescription"
-              required
-              value={beerData.beerDescription}
+            >
+              <option value="">Select beer type</option>
+              {generateOptions('beerType')}
+            </select>
+            <select
+              className={styles.selectBeerProp}
+              name="fermentedType"
+              value={beerData.fermentedType}
               onChange={handleInputChange}
-            ></textarea>
-            <label className={styles.beerLabel}>Beer Description</label>
-          </div>
-          <div className={styles.brandBox}>
-            <input
-              className={styles.inputField}
-              type="text"
-              required
-              name="alcoholByVolume"
-              value={alcoholByVolumeInput}
-              // value={beerData.alcoholByVolume}
-              onChange={handleAbVInput}
-              onBlur={handleInputBlur}
-              pattern="[0-9]+(.[0-9])"
-            />
-            <label className={styles.beerLabel}>Alcohol by Volume</label>
-          </div>
-          <label>
-            Color:
-            <div className={styles.optionContainer}>
-              {generateAromaColorMouthfeelOptions('color')}
+            >
+              <option value="">Select fermented type</option>
+              {generateOptions('fermentedType')}
+            </select>
+            <div className={styles.brandBox}>
+              <textarea
+                className={styles.inputField}
+                name="beerDescription"
+                required
+                value={beerData.beerDescription}
+                onChange={handleInputChange}
+              ></textarea>
+              <label className={styles.beerLabel}>Beer Description</label>
             </div>
-          </label>
-          <label>
-            Mouthfeel:
-            <div className={styles.optionContainer}>
-              {generateAromaColorMouthfeelOptions('mouthfeel')}
+            <div className={styles.brandBox}>
+              <input
+                className={styles.inputField}
+                type="text"
+                required
+                name="alcoholByVolume"
+                value={alcoholByVolumeInput}
+                // value={beerData.alcoholByVolume}
+                onChange={handleAbVInput}
+                onBlur={handleInputBlur}
+                pattern="[0-9]+(.[0-9])"
+              />
+              <label className={styles.beerLabel}>Alcohol by Volume</label>
             </div>
-          </label>
-          <label>
-            Aroma:
-            <div className={styles.optionContainer}>
-              {generateAromaColorMouthfeelOptions('aroma')}
-            </div>
-          </label>
-          <button type="submit">Add Beer</button>
-        </form>
-      )}
-    </div>
+            <label>
+              Color:
+              <div className={styles.optionContainer}>
+                {generateAromaColorMouthfeelOptions('color')}
+              </div>
+            </label>
+            <label>
+              Mouthfeel:
+              <div className={styles.optionContainer}>
+                {generateAromaColorMouthfeelOptions('mouthfeel')}
+              </div>
+            </label>
+            <label>
+              Aroma:
+              <div className={styles.optionContainer}>
+                {generateAromaColorMouthfeelOptions('aroma')}
+              </div>
+            </label>
+            <button type="submit">Add Beer</button>
+          </form>
+        )}
+      </div>
+      <div className={styles.empty}></div>
+    </>
   )
 }
 

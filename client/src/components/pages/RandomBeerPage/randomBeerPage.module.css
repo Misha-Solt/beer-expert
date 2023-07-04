@@ -1,12 +1,25 @@
 .container {
   position: absolute;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content:space-around;
   align-items: center;
-  width: 85%;
+  width: 87%;
   height: 80%;
   margin: 100px 0px 0px 100px;
 }
 .randomBeerPage {
-
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.card{
+  text-decoration: none;
+}
+.bottom{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }

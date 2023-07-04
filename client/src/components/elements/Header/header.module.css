@@ -1,5 +1,5 @@
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   display: flex;
@@ -8,8 +8,10 @@
   height: 75px;
   box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.15);
   background-color: var(--background);
+  opacity: 1;
   inset: 0px 20px 0px 20px;
   border-radius: 0 0 12px 12px;
+  z-index: 100;
 }
 .left {
   position: relative;

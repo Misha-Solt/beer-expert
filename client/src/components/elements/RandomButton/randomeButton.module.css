@@ -16,6 +16,9 @@
   align-items: center;
   justify-content: space-between;
 }
+.button span {
+  padding: 10px;
+}
 .button:hover {
   box-shadow: 0 10px 20px -4px var(--grey);
   text-shadow: var(--grey) 1px 0 3px;

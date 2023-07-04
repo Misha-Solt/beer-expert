@@ -4,6 +4,9 @@ import BeerCard from '../../elements/BeerCard/BeerCard'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import styles from './randomBeerPage.module.css'
+import BackButton from '../../elements/BackButton/BackButton'
+import GetAllButton from '../../elements/GetAllButton/GetAllButton'
+import RerollButton from '../../elements/RerollButton/RerollButton'
 
 export default function RandomBeerPage() {
   const [randomBeer, setRandomBeer] = useState(null)
@@ -42,17 +45,16 @@ export default function RandomBeerPage() {
   return (
     <div className={styles.container}>
       <div className={styles.randomBeerPage}>
-        {randomBeer && <BeerCard beer={randomBeer} />}
-        <button onClick={rerollRandomBeer}>Reroll</button>
-        <button>
-          <Link to={`/randomBeerDetails/${beerId}`}>More</Link>
-        </button>
-        <button>
-          <Link to="/">Back</Link>
-        </button>
-        <button>
-          <Link to="/find">Find a Beer</Link>
-        </button>
+        <Link to={`/randomBeerDetails/${beerId}`} className={styles.card}>
+          {randomBeer && <BeerCard beer={randomBeer} />}
+        </Link>
+
+        <RerollButton onClick={rerollRandomBeer}/>
+
+        <div className={styles.bottom}>
+          <BackButton />
+          <GetAllButton />
+        </div>
       </div>
     </div>
   )

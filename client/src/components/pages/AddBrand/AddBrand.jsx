@@ -60,133 +60,136 @@ export const AddBrand = () => {
   }
 
   return (
-    <div className={styles.brandContainer}>
-      <h1>Add a new brand</h1>
-      <form onSubmit={handleFormSubmit} className={styles.formContainer}>
-        <div className={styles.brandBox}>
-          <input
-            type="text"
-            name="brandName"
-            id="brandName"
-            required
-            className={styles.brandInput}
-          />
-          <label className={styles.brandLabel}>Brand Name</label>
-        </div>
-        <div className={styles.brandBox}>
-          <input
-            type="text"
-            name="url"
-            id="url"
-            required
-            className={styles.brandInput}
-          />
-          <label className={styles.brandLabel}>URL</label>
-        </div>
-        <div className={styles.brandBox}>
-          <input
-            type="text"
-            name="brandDescription"
-            id="brandDescription"
-            required
-            className={styles.brandInput}
-          />
-          <label className={styles.brandLabel}>Brand Description</label>
-        </div>
-        <h3 id={styles.mainAddressHeader}>Main Address:</h3>
-        <div className={styles.brandBox}>
-          <input
-            type="text"
-            name="street"
-            id="street"
-            required
-            className={styles.brandInput}
-          />
-          <label className={styles.brandLabel}>Street</label>
-        </div>
-        <div className={styles.brandBox}>
-          <input
-            type="text"
-            name="number"
-            id="number"
-            required
-            className={styles.brandInput}
-          />
-          <label className={styles.brandLabel}>Number</label>
-        </div>
-        <div className={styles.brandBox}>
-          <input
-            type="text"
-            name="plz"
-            id="plz"
-            required
-            className={styles.brandInput}
-          />
-          <label className={styles.brandLabel}>PLZ</label>
-        </div>
-        <div className={styles.brandBox}>
-          <input
-            type="text"
-            name="city"
-            id="city"
-            required
-            className={styles.brandInput}
-          />
-          <label className={styles.brandLabel}>City</label>
-        </div>
-        <div className={styles.brandBox}>
-          <input
-            type="text"
-            name="land"
-            id="land"
-            required
-            className={styles.brandInput}
-          />
-          <label className={styles.brandLabel}>Land</label>
-        </div>
-        <div className={styles.brandBox}>
-          <input
-            type="text"
-            name="country"
-            id="country"
-            required
-            className={styles.brandInput}
-          />
-          <label className={styles.brandLabel}>Country</label>
-        </div>
-        <div className={styles.brandBox}>
-          <input
-            type="text"
-            name="latitude"
-            id="latitude"
-            required
-            className={styles.brandInput}
-            value={latitudeInput}
-            onChange={handleLatitudeChange}
-            pattern="[0-9]+(\.[0-9]+)?"
-          />
-          <label className={styles.brandLabel}>Latitude</label>
-        </div>
-        <div className={styles.brandBox}>
-          <input
-            type="text"
-            name="longitude"
-            id="longitude"
-            required
-            className={styles.brandInput}
-            value={longitudeInput}
-            onChange={handleLongitudeChange}
-            pattern="[0-9]+(\.[0-9]+)?"
-          />
-          <label className={styles.brandLabel}>Longitude</label>
-        </div>
-        <div className={styles.buttonBox}>
-          <button type="submit" className={styles.formButton}>
-            Add Brand
-          </button>
-        </div>
-      </form>
-    </div>
+    <>
+      <div className={styles.brandContainer}>
+        <h1>Add a new brand</h1>
+        <form onSubmit={handleFormSubmit} className={styles.formContainer}>
+          <div className={styles.brandBox}>
+            <input
+              type="text"
+              name="brandName"
+              id="brandName"
+              required
+              className={styles.brandInput}
+            />
+            <label className={styles.brandLabel}>Brand Name</label>
+          </div>
+          <div className={styles.brandBox}>
+            <input
+              type="text"
+              name="url"
+              id="url"
+              required
+              className={styles.brandInput}
+            />
+            <label className={styles.brandLabel}>URL</label>
+          </div>
+          <div className={styles.brandBox}>
+            <input
+              type="text"
+              name="brandDescription"
+              id="brandDescription"
+              required
+              className={styles.brandInput}
+            />
+            <label className={styles.brandLabel}>Brand Description</label>
+          </div>
+          <h3 id={styles.mainAddressHeader}>Main Address:</h3>
+          <div className={styles.brandBox}>
+            <input
+              type="text"
+              name="street"
+              id="street"
+              required
+              className={styles.brandInput}
+            />
+            <label className={styles.brandLabel}>Street</label>
+          </div>
+          <div className={styles.brandBox}>
+            <input
+              type="text"
+              name="number"
+              id="number"
+              required
+              className={styles.brandInput}
+            />
+            <label className={styles.brandLabel}>Number</label>
+          </div>
+          <div className={styles.brandBox}>
+            <input
+              type="text"
+              name="plz"
+              id="plz"
+              required
+              className={styles.brandInput}
+            />
+            <label className={styles.brandLabel}>PLZ</label>
+          </div>
+          <div className={styles.brandBox}>
+            <input
+              type="text"
+              name="city"
+              id="city"
+              required
+              className={styles.brandInput}
+            />
+            <label className={styles.brandLabel}>City</label>
+          </div>
+          <div className={styles.brandBox}>
+            <input
+              type="text"
+              name="land"
+              id="land"
+              required
+              className={styles.brandInput}
+            />
+            <label className={styles.brandLabel}>Land</label>
+          </div>
+          <div className={styles.brandBox}>
+            <input
+              type="text"
+              name="country"
+              id="country"
+              required
+              className={styles.brandInput}
+            />
+            <label className={styles.brandLabel}>Country</label>
+          </div>
+          <div className={styles.brandBox}>
+            <input
+              type="text"
+              name="latitude"
+              id="latitude"
+              required
+              className={styles.brandInput}
+              value={latitudeInput}
+              onChange={handleLatitudeChange}
+              pattern="[0-9]+(\.[0-9]+)?"
+            />
+            <label className={styles.brandLabel}>Latitude</label>
+          </div>
+          <div className={styles.brandBox}>
+            <input
+              type="text"
+              name="longitude"
+              id="longitude"
+              required
+              className={styles.brandInput}
+              value={longitudeInput}
+              onChange={handleLongitudeChange}
+              pattern="[0-9]+(\.[0-9]+)?"
+            />
+            <label className={styles.brandLabel}>Longitude</label>
+          </div>
+          <div className={styles.buttonBox}>
+            <button type="submit" className={styles.formButton}>
+              Add Brand
+            </button>
+          </div>
+        </form>
+      </div>
+      <div className={styles.empty}></div>
+    </>
   )
 }
 
