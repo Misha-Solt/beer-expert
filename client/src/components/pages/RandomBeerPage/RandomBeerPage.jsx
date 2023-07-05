@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import styles from './randomBeerPage.module.css'
 import BackButton from '../../elements/BackButton/BackButton'
-import GetAllButton from '../../elements/GetAllButton/GetAllButton'
+import ForwardButton from '../../elements/ForwardButton/ForwardButton'
 import RerollButton from '../../elements/RerollButton/RerollButton'
 
 export default function RandomBeerPage() {
@@ -42,6 +42,11 @@ export default function RandomBeerPage() {
     fetchRandomBeer()
   }
 
+  const backLink = '/'
+  const forwardLink = '/find'
+  const nameBackLink = 'Go Back'
+  const nameForwardLink = 'Get all'
+
   return (
     <div className={styles.container}>
       <div className={styles.randomBeerPage}>
@@ -49,11 +54,14 @@ export default function RandomBeerPage() {
           {randomBeer && <BeerCard beer={randomBeer} />}
         </Link>
 
-        <RerollButton onClick={rerollRandomBeer}/>
+        <RerollButton onClick={rerollRandomBeer} />
 
         <div className={styles.bottom}>
-          <BackButton />
-          <GetAllButton />
+          <BackButton backLink={backLink} nameBackLink={nameBackLink} />
+          <ForwardButton
+            forwardLink={forwardLink}
+            nameForwardLink={nameForwardLink}
+          />
         </div>
       </div>
     </div>

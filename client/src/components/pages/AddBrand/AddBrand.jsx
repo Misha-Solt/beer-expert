@@ -2,10 +2,27 @@ import React from 'react'
 import styles from './addBrand.module.css'
 import { useState } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+import ConfirmationDialog from '../../elements/ConfirmationDialog/ConfirmationDialog'
+import ConfirmBackButton from '../../elements/ConfirmationDialog/ConfirmBackButton'
 
 export const AddBrand = () => {
   const [latitudeInput, setLatitudeInput] = useState('')
   const [longitudeInput, setLongitudeInput] = useState('')
+
+  // useEffect(() => {
+  //   window.addEventListener('beforeunload', alertUser)
+  //   return () => {
+  //     window.removeEventListener('beforeunload', alertUser)
+  //   }
+  // }, [])
+
+  // const alertUser = (e) => {
+  //   e.preventDefault()
+  //   console.log('leaving page')
+  //   setShowConfirmation(true)
+  //   e.returnValue = ''
+  // }
 
   const handleLatitudeChange = (event) => {
     const inputValue = event.target.value
@@ -57,6 +74,36 @@ export const AddBrand = () => {
   const resetForm = () => {
     setLatitudeInput('')
     setLongitudeInput('')
+  }
+
+  // const navigate = useNavigate()
+  // const handleGoBack = () => {
+  //   const confirmed = window.confirm(
+  //     'Are you sure you want to leave this page?'
+  //   )
+  //   if (confirmed) {
+  //     navigate('/addBeerOrBrand')
+  //   }
+  // }
+
+  const backLink = '/addBeerOrBrand'
+  const nameBackLink = 'Go Back'
+
+  //The confirmation window code! The Window and styles on it is on elements/ConfirmationDialog/ConfirmationDialog.jsx
+  const [showConfirmation, setShowConfirmation] = useState(false)
+  const navigate = useNavigate()
+
+  const handleGoBack = (e) => {
+    e.preventDefault()
+    setShowConfirmation(true)
+  }
+
+  const handleConfirmationCancel = () => {
+    setShowConfirmation(false)
+  }
+
+  const handleConfirmationConfirm = () => {
+    navigate('/addBeerOrBrand')
   }
 
   return (
@@ -181,12 +228,24 @@ export const AddBrand = () => {
             />
             <label className={styles.brandLabel}>Longitude</label>
           </div>
+          {showConfirmation && (
+            <ConfirmationDialog
+              message="Are you sure you want to leave this page?"
+              onConfirm={handleConfirmationConfirm}
+              onCancel={handleConfirmationCancel}
+            />
+          )}
           <div className={styles.buttonBox}>
             <button type="submit" className={styles.formButton}>
               Add Brand
             </button>
           </div>
         </form>
+        <ConfirmBackButton
+          backLink={backLink}
+          nameBackLink={nameBackLink}
+          onButtonClicked={handleGoBack}
+        />
       </div>
       <div className={styles.empty}></div>
     </>

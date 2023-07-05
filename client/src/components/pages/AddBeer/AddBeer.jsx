@@ -1,5 +1,9 @@
+import ConfirmBackButton from '../../elements/ConfirmationDialog/ConfirmBackButton'
+import ConfirmationDialog from '../../elements/ConfirmationDialog/ConfirmationDialog'
+import ForwardButton from '../../elements/ForwardButton/ForwardButton'
 import styles from './addBeer.module.css'
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const AddBeerForm = () => {
   const [brands, setBrands] = useState([])
@@ -166,9 +170,29 @@ const AddBeerForm = () => {
         </option>
       ))
     }
+
     return null
   }
+  const forwardLink = '/addBrand'
+  const nameForwardLink = 'Add Brand'
+  const backLink = '/'
+  const nameBackLink = 'Home'
 
+  const [showConfirmation, setShowConfirmation] = useState(false)
+  const navigate = useNavigate()
+
+  const handleGoBack = (e) => {
+    e.preventDefault()
+    setShowConfirmation(true)
+  }
+
+  const handleConfirmationCancel = () => {
+    setShowConfirmation(false)
+  }
+
+  const handleConfirmationConfirm = () => {
+    navigate('/')
+  }
   return (
     <>
       <div className={styles.container}>
@@ -261,6 +285,25 @@ const AddBeerForm = () => {
             </div>
           </form>
         )}
+        {showConfirmation && (
+          <ConfirmationDialog
+            message="Are you sure you want to leave this page?"
+            onConfirm={handleConfirmationConfirm}
+            onCancel={handleConfirmationCancel}
+          />
+        )}
+        <div className={styles.noBrandQuestion}>
+          <ConfirmBackButton
+            backLink={backLink}
+            nameBackLink={nameBackLink}
+            onButtonClicked={handleGoBack}
+          />
+          <h2>Didn't find a Brand? Add new one!</h2>
+          <ForwardButton
+            forwardLink={forwardLink}
+            nameForwardLink={nameForwardLink}
+          />
+        </div>
       </div>
       <div className={styles.empty}></div>
     </>

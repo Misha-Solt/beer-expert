@@ -1,9 +1,9 @@
-import styles from './backButton.module.scss'
+import styles from './confirmBackButton.module.scss'
 
-const BackButton = ({ backLink, nameBackLink }) => {
+const ConfirmBackButton = ({ backLink, nameBackLink, onButtonClicked }) => {
   return (
     <div className={styles.content} data-form-type="card">
-      <a href={backLink} className={styles.btn}>
+      <a href={backLink} onClick={onButtonClicked} className={styles.btn}>
         <span className={styles.btn__circle}></span>
         <span className={styles.btn__filledCircle}>
           <svg
@@ -20,4 +20,4 @@ const BackButton = ({ backLink, nameBackLink }) => {
   )
 }
 
-export default BackButton
+export default ConfirmBackButton
