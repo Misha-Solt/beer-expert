@@ -48,11 +48,7 @@ export default function RandomBeerPage() {
         <Link to={`/randomBeerDetails/${beerId}`} className={styles.card}>
           {randomBeer && <BeerCard beer={randomBeer} />}
         </Link>
-
-        <button onClick={rerollRandomBeer}>PUSH</button>
-
-        <RerollButton />
-
+        <RerollButton rerollRandomBeer={rerollRandomBeer} />
         <div className={styles.bottom}>
           <BackButton />
           <GetAllButton />

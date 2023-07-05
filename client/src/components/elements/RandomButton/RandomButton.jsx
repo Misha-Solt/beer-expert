@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import styles from './randomeButton.module.css'
+import styles from './randomButton.module.css'
 import { Link, useNavigate } from 'react-router-dom'
 
 const delay = (ms) => {
