@@ -1,10 +1,9 @@
 .content {
-  background: var(--background);
   height: 75px;
   width: 150px;
   display: flex;
   align-items: center;
-  justify-content:flex-end;
+  justify-content: flex-end;
 }
 .btn {
   // display: inline-block;
@@ -51,7 +50,7 @@
   &__text {
     font-weight: 700;
     font-size: 1rem;
-margin-left: -61px;
+    margin-left: -61px;
     transform: translateY(-50%);
     white-space: nowrap;
     z-index: 2;
@@ -72,4 +71,3 @@ margin-left: -61px;
     }
   }
 }
-

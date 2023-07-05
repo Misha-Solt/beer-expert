@@ -111,7 +111,7 @@
     content: '';
     width: 250px;
     height: 250px;
-    background: #e8b504;
+    background: var(--yellow);
     position: absolute;
     top: 83px;
     left: -190px;
