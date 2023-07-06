@@ -61,6 +61,7 @@ export default function RandomBeerPage() {
             nameForwardLink={nameForwardLink}
           />
         </div>
+        <div className={styles.empty}></div>
       </div>
     </div>
   )
