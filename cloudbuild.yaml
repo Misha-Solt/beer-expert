@@ -1,16 +1,16 @@
 # Install node packages
 steps:
-  - name: node:18.15.0
-    entrypoint: npm
-    args: ['install']
+- name: node:18.15.0
+  entrypoint: npm
+  args: ['install']
 
-  # Build productive files
-  - name: node:18.15.0
-    entrypoint: npm
-    args: ['run', 'build', '--prod']
+# Build productive files
+- name: node:18.15.0
+  entrypoint: npm
+  args: [ 'run', 'build', '--prod' ]
 
-  # Deploy to google cloud app engine
-  - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['app', 'deploy', '--version=demo']
+# Deploy to google cloud app engine
+- name: "gcr.io/cloud-builders/gcloud"
+  args: ['app', 'deploy', '--version=demo']
 options:
   logging: CLOUD_LOGGING_ONLY
