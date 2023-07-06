@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
+import styles from './beerDetails.module.css'
+import BeerCard from '../../elements/BeerCard/BeerCard'
 
 export default function BeerDetails() {
   const { beerId } = useParams()
@@ -21,30 +23,26 @@ export default function BeerDetails() {
   }
 
   return (
-    <div>
+    <>
       {beerDetails ? (
-        <div>
-          <h1>{beerDetails.beerName}</h1>
-          <p>Type: {beerDetails.beerType}</p>
-          <p>Description: {beerDetails.beerDescription}</p>
-          <p>ABV: {beerDetails.alcoholByVolume}</p>
-          <p>Color: {beerDetails.color}</p>
-          <p>Mouthfeel: {beerDetails.mouthfeel}</p>
-          <p>Aroma: {beerDetails.aroma}</p>
-          <p>Average Rating: {beerDetails.avgRating}</p>
-          <h2>Brand: {beerDetails.brandName}</h2>
-          <p>Website: {beerDetails.url} </p>
-          <p>Brand Description: {beerDetails.brandDescription}</p>
-          <p>
-            MainAddress: {beerDetails.mainAddress.country},{' '}
-            {beerDetails.mainAddress.land}
-            {beerDetails.mainAddress.city}, {beerDetails.mainAddress.street}{' '}
-            {beerDetails.mainAddress.number}, PLZ: {beerDetails.mainAddress.plz}
-          </p>
+        <div className={styles.container}>
+          <BeerCard beer={beerDetails} />
+          <div className={styles.brand}>
+            <h2>Brand: {beerDetails.brandName}</h2>
+            <p>Website: {beerDetails.url} </p>
+            <p>Brand Description: {beerDetails.brandDescription}</p>
+            <p>
+              MainAddress: {beerDetails.mainAddress.country},{' '}
+              {beerDetails.mainAddress.land}
+              {beerDetails.mainAddress.city}, {beerDetails.mainAddress.street}{' '}
+              {beerDetails.mainAddress.number}, PLZ:{' '}
+              {beerDetails.mainAddress.plz}
+            </p>
+          </div>
         </div>
       ) : (
         <p>Loading beer details...</p>
       )}
-    </div>
+    </>
   )
 }
