@@ -62,7 +62,7 @@ export const AddBrand = () => {
     e.target.reset() //this resets the formData form
 
     try {
-      await axios.post('http://localhost:3001/api/add-brand', data)
+      await axios.post('/api/add-brand', data)
       resetForm() //this resets longitude and latitude fields
     } catch (error) {
       console.log(error)

@@ -26,7 +26,7 @@ export default function RandomBeerPage() {
 
   const fetchRandomBeer = async () => {
     try {
-      const res = await axios.get('http://localhost:3001/api/random-beer')
+      const res = await axios.get('/api/random-beer')
       const fetchedRandomBeer = res.data
       setRandomBeer(fetchedRandomBeer)
       setBeerId(fetchedRandomBeer._id) //set beer Id for finding details about beer by clicking 'More' button

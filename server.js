@@ -6,6 +6,14 @@ import dotenv from 'dotenv'
 //import router modules into our server
 import beerRoutes from './routes/beerRoutes.js'
 
+//imports for locating our directory (for deployment)
+import { dirname } from 'path'
+import { fileURLToPath } from 'url'
+import path from 'path'
+
+const __filename = fileURLToPath(import.meta.url) // get the current file location of server.js
+const __dirname = dirname(__filename) //extract directory from that location.
+
 dotenv.config()
 const app = express()
 const port = 3001
@@ -30,6 +38,13 @@ mongoose
 
 //start link for the server
 app.use('/api', beerRoutes)
+
+//serve our files statically
+app.use(express.static(path.join(__dirname, 'client/build')))
+//any other request made serve the index.html of our production build frontend.
+app.get('*', (req, res) => {
+  res.sendFile(__dirname + '/client/build/index.html')
+})
 
 app.listen(port, () => {
   console.log(
