@@ -1,3 +1,4 @@
+import BackButton from '../../elements/BackButton/BackButton'
 import ConfirmBackButton from '../../elements/ConfirmationDialog/ConfirmBackButton'
 import ConfirmationDialog from '../../elements/ConfirmationDialog/ConfirmationDialog'
 import ForwardButton from '../../elements/ForwardButton/ForwardButton'
@@ -210,80 +211,89 @@ const AddBeerForm = () => {
           ))}
         </select>
         {selectedBrand && (
-          <form onSubmit={handleSubmit} className={styles.formContainer}>
-            <div className={styles.brandBox}>
-              <input
-                className={styles.inputField}
-                type="text"
-                name="beerName"
-                required
-                value={beerData.beerName}
+          <>
+            <form onSubmit={handleSubmit} className={styles.formContainer}>
+              <div className={styles.brandBox}>
+                <input
+                  className={styles.inputField}
+                  type="text"
+                  name="beerName"
+                  required
+                  value={beerData.beerName}
+                  onChange={handleInputChange}
+                />
+                <label className={styles.beerLabel}>Beer Name</label>
+              </div>
+              <select
+                className={styles.selectBeerProp}
+                name="beerType"
+                value={beerData.beerType}
                 onChange={handleInputChange}
-              />
-              <label className={styles.beerLabel}>Beer Name</label>
-            </div>
-            <select
-              className={styles.selectBeerProp}
-              name="beerType"
-              value={beerData.beerType}
-              onChange={handleInputChange}
-            >
-              <option value="">Select beer type</option>
-              {generateOptions('beerType')}
-            </select>
-            <select
-              className={styles.selectBeerProp}
-              name="fermentedType"
-              value={beerData.fermentedType}
-              onChange={handleInputChange}
-            >
-              <option value="">Select fermented type</option>
-              {generateOptions('fermentedType')}
-            </select>
-            <div className={styles.brandBox}>
-              <textarea
-                className={styles.inputField}
-                name="beerDescription"
-                required
-                value={beerData.beerDescription}
+              >
+                <option value="">Select beer type</option>
+                {generateOptions('beerType')}
+              </select>
+              <select
+                className={styles.selectBeerProp}
+                name="fermentedType"
+                value={beerData.fermentedType}
                 onChange={handleInputChange}
-              ></textarea>
-              <label className={styles.beerLabel}>Beer Description</label>
-            </div>
-            <div className={styles.brandBox}>
-              <input
-                className={styles.inputField}
-                type="text"
-                required
-                name="alcoholByVolume"
-                value={alcoholByVolumeInput}
-                // value={beerData.alcoholByVolume}
-                onChange={handleAbVInput}
-                onBlur={handleInputBlur}
-                pattern="[0-9]+(.[0-9])"
+              >
+                <option value="">Select fermented type</option>
+                {generateOptions('fermentedType')}
+              </select>
+              <div className={styles.brandBox}>
+                <textarea
+                  className={styles.inputField}
+                  name="beerDescription"
+                  required
+                  value={beerData.beerDescription}
+                  onChange={handleInputChange}
+                ></textarea>
+                <label className={styles.beerLabel}>Beer Description</label>
+              </div>
+              <div className={styles.brandBox}>
+                <input
+                  className={styles.inputField}
+                  type="text"
+                  required
+                  name="alcoholByVolume"
+                  value={alcoholByVolumeInput}
+                  // value={beerData.alcoholByVolume}
+                  onChange={handleAbVInput}
+                  onBlur={handleInputBlur}
+                  pattern="[0-9]+(.[0-9])"
+                />
+                <label className={styles.beerLabel}>Alcohol by Volume</label>
+              </div>
+              <p>Color:</p>
+              <div className={styles.checkboxContainer}>
+                {generateAromaColorMouthfeelOptions('color')}
+              </div>
+
+              <p>Mouthfeel:</p>
+              <div className={styles.checkboxContainer}>
+                {generateAromaColorMouthfeelOptions('mouthfeel')}
+              </div>
+
+              <p>Aroma:</p>
+              <div className={styles.checkboxContainer}>
+                {generateAromaColorMouthfeelOptions('aroma')}
+              </div>
+              <div className={styles.buttonBox}>
+                <button id={styles.addBeerButton} type="submit">
+                  Add Beer
+                </button>
+              </div>
+            </form>
+            <div className={styles.noBrandQuestion}>
+              <ConfirmBackButton
+                backLink={backLink}
+                nameBackLink={nameBackLink}
+                onButtonClicked={handleGoBack}
               />
-              <label className={styles.beerLabel}>Alcohol by Volume</label>
             </div>
-            <p>Color:</p>
-            <div className={styles.checkboxContainer}>
-              {generateAromaColorMouthfeelOptions('color')}
-            </div>
-
-            <p>Mouthfeel:</p>
-            <div className={styles.checkboxContainer}>
-              {generateAromaColorMouthfeelOptions('mouthfeel')}
-            </div>
-
-            <p>Aroma:</p>
-            <div className={styles.checkboxContainer}>
-              {generateAromaColorMouthfeelOptions('aroma')}
-            </div>
-            <div className={styles.buttonBox}>
-              <button id={styles.addBeerButton} type="submit">
-                Add Beer
-              </button>
-            </div>
-          </form>
+          </>
         )}
         {showConfirmation && (
           <ConfirmationDialog
@@ -292,18 +302,16 @@ const AddBeerForm = () => {
             onCancel={handleConfirmationCancel}
           />
         )}
-        <div className={styles.noBrandQuestion}>
-          <ConfirmBackButton
-            backLink={backLink}
-            nameBackLink={nameBackLink}
-            onButtonClicked={handleGoBack}
-          />
-          <h2>Didn't find a Brand? Add new one!</h2>
-          <ForwardButton
-            forwardLink={forwardLink}
-            nameForwardLink={nameForwardLink}
-          />
-        </div>
+        {!selectedBrand && (
+          <div className={styles.brandQuestion}>
+            <BackButton backLink={backLink} nameBackLink={nameBackLink} />
+            <h2>Didn't find a Brand? Add new one!</h2>
+            <ForwardButton
+              forwardLink={forwardLink}
+              nameForwardLink={nameForwardLink}
+            />
+          </div>
+        )}
       </div>
       <div className={styles.empty}></div>
     </>
