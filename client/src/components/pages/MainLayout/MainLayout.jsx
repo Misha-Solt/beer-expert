@@ -10,7 +10,6 @@ const MainLayout = () => {
         Isn't it?
       </h3>
       <RandomButton />
-      
     </div>
   )
 }

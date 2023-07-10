@@ -494,3 +494,57 @@
     opacity: 0;
   }
 }
+
+@media screen and (max-width: 415px) {
+  .button {
+    width: 150px;
+  }
+  .absolutely {
+    display: none;
+  }
+  .beer {
+    width: 100px;
+    height: 100px;
+    top: 0px;
+    left: 0px;
+  }
+
+  .glass {
+    width: 100px;
+    height: 100px;
+    top: 0px;
+    left: 0px;
+  }
+
+  .handle {
+    width: 100px;
+    height: 100px;
+    top: 0px;
+    left: 0px;
+  }
+
+  #foamOut {
+    top: 20px;
+    left: 20px;
+  }
+
+  #foamIn {
+    top: 60px;
+    left: 25px;
+  }
+
+  #foamIn2 {
+    top: 50px;
+    left: 30px;
+  }
+
+  #foamIn3 {
+    top: 55px;
+    left: 35px;
+  }
+
+  #foamIn4 {
+    top: 50px;
+    left: 40px;
+  }
+}

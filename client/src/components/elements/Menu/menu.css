@@ -73,7 +73,7 @@
   transition: 0.5s;
   text-decoration: none;
 }
-.navLink .text{
+.navLink .text {
   font-size: 1.2rem;
   font-family: 'Atkinson Hyperlegible', sans-serif;
   font-weight: 600;
@@ -186,6 +186,18 @@
   visibility: visible;
   opacity: 1;
 }
-.navLink.active .text{
+.navLink.active .text {
   color: var(--red);
+}
+
+@media screen and(max-width:415px) {
+  .menu {
+    inset: 15% 0 40px 10px;
+  }
+  .hamburger {
+    display: none;
+  }
+  .icon::after {
+    left: -50px;
+  }
 }

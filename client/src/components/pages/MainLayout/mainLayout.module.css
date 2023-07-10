@@ -28,3 +28,16 @@
   font-weight: bolder;
   color: var(--red);
 }
+
+@media screen and (max-width: 415px) {
+  .greeting {
+    font-size: 3rem;
+    margin-left: 10%;
+    margin-top: 10%;
+  }
+  .question {
+    font-size: 2rem;
+    margin-left: 10%;
+    right: 10%;
+  }
+}
