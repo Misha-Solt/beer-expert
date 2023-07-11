@@ -193,3 +193,24 @@ export const getEnums = async (req, res) => {
 //   const { enumValues } = beerSchema.path('beerType')
 //   res.json(enumValues)
 // }
+
+export const searchByName = async (req, res) => {
+  const searchQuery = req.query.search
+  try {
+    const brands = await Brand.find({
+      brandName: { $regex: searchQuery, $options: 'i' },
+    })
+    const beers = await Brand.aggregate([
+      { $unwind: '$beers' },
+      { $match: { 'beers.beerName': { $regex: searchQuery, $options: 'i' } } },
+      { $replaceRoot: { newRoot: '$beers' } },
+    ])
+
+    const searchResults = [...brands, ...beers]
+    return res.status(StatusCodes.OK).json(searchResults)
+  } catch (error) {
+    res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .json({ message: error.message })
+  }
+}
