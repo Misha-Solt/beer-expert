@@ -44,7 +44,9 @@ const RandomButton = () => {
           <div id={styles.emptyGlass}></div>
           <div id={styles.emptyHandle}></div>
         </div>
-        <span>{isLoading ? 'Loading...' : 'Absolutely!'}</span>
+        <span className={styles.absolutely}>
+          {isLoading ? 'Loading...' : 'Absolutely!'}
+        </span>
       </Link>
     </button>
   )
