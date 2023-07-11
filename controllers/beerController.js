@@ -194,15 +194,65 @@ export const getEnums = async (req, res) => {
 //   res.json(enumValues)
 // }
 
+//search beer or brand by name
+// export const searchByName = async (req, res) => {
+//   const searchQuery = req.query.search
+//   try {
+//     const brands = await Brand.find({
+//       brandName: { $regex: searchQuery, $options: 'i' },
+//     })
+//     const beers = await Brand.aggregate([
+//       { $unwind: '$beers' },
+//       { $match: { 'beers.beerName': { $regex: searchQuery, $options: 'i' } } },
+//       { $replaceRoot: { newRoot: '$beers' } },
+//     ])
+
+//     const searchResults = [...brands, ...beers]
+//     return res.status(StatusCodes.OK).json(searchResults)
+//   } catch (error) {
+//     res
+//       .status(StatusCodes.INTERNAL_SERVER_ERROR)
+//       .json({ message: error.message })
+//   }
+// }
+
 export const searchByName = async (req, res) => {
   const searchQuery = req.query.search
+
+  // Character mapping function that will help read ä ü ö as a u o
+  // const mapSpecialCharacters = (str) => {
+  //   const characterMap = {
+  //     ü: 'u',
+  //     ä: 'a',
+  //     ö: 'o',
+  //   }
+  //   return str.replace(/[üäö]/g, (match) => characterMap[match])
+  // }
+
+  // Here is a regular expression pattern for case-insensitive search
+  const regexPattern = new RegExp(searchQuery, 'i')
+
   try {
     const brands = await Brand.find({
-      brandName: { $regex: searchQuery, $options: 'i' },
+      brandName: { $regex: regexPattern },
     })
+
     const beers = await Brand.aggregate([
       { $unwind: '$beers' },
-      { $match: { 'beers.beerName': { $regex: searchQuery, $options: 'i' } } },
+      {
+        $match: {
+          $or: [
+            { 'beers.beerName': { $regex: regexPattern } },
+            { 'beers.beerType': { $regex: regexPattern } },
+            { 'beers.alcoholByVolume': { $regex: regexPattern } },
+            // { 'beers.beerDescription': { $regex: regexPattern } },
+            { 'beers.mouthfeel': { $regex: regexPattern } },
+            { 'beers.aroma': { $regex: regexPattern } },
+            { 'beers.flavor': { $regex: regexPattern } },
+            { 'beers.color': { $regex: regexPattern } },
+          ],
+        },
+      },
       { $replaceRoot: { newRoot: '$beers' } },
     ])
 
