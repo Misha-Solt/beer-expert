@@ -220,6 +220,7 @@ export const searchByName = async (req, res) => {
   const searchQuery = req.query.search
 
   // Character mapping function that will help read ä ü ö as a u o
+
   // const mapSpecialCharacters = (str) => {
   //   const characterMap = {
   //     ü: 'u',
@@ -228,6 +229,13 @@ export const searchByName = async (req, res) => {
   //   }
   //   return str.replace(/[üäö]/g, (match) => characterMap[match])
   // }
+
+  // const beers = await Brand.aggregate([
+  //   { $match: { $text: { $search: 'hofbrau' } } },
+  //   { $unwind: '$beers' },
+
+  //   { $replaceRoot: { newRoot: '$beers' } },
+  // ])
 
   // Here is a regular expression pattern for case-insensitive search
   const regexPattern = new RegExp(searchQuery, 'i')
@@ -245,7 +253,7 @@ export const searchByName = async (req, res) => {
             { 'beers.beerName': { $regex: regexPattern } },
             { 'beers.beerType': { $regex: regexPattern } },
             { 'beers.alcoholByVolume': { $regex: regexPattern } },
-            // { 'beers.beerDescription': { $regex: regexPattern } },
+            // { 'beers.beerDescription': { $regex: regexPattern } },cd
             { 'beers.mouthfeel': { $regex: regexPattern } },
             { 'beers.aroma': { $regex: regexPattern } },
             { 'beers.flavor': { $regex: regexPattern } },
