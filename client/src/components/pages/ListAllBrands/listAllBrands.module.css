@@ -1,12 +1,7 @@
-.refreshBtn {
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 15px 30px;
-  background-color: var(--yellow);
-  box-shadow: 0 10px 20px -8px var(--grey);
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s;
-  border-radius: 12px;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin: 20px;
 }

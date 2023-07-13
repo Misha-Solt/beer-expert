@@ -1,31 +1,18 @@
-import React, { useState } from 'react'
-import axios from 'axios'
-import BrandCard from './BrandCard.jsx'
+import React from 'react'
+
+import BrandCard from '../../elements/BrandCard/BrandCard'
 import styles from './listAllBrands.module.css'
 
-export const ListAllBrands = () => {
-  const [brands, setBrands] = useState([])
-
-  const refreshList = async () => {
-    console.log('refreshing list')
-
-    try {
-      const res = await axios.get('http://localhost:3001/api/brands')
-      setBrands(res.data)
-    } catch (error) {
-      console.error('Error fetching brands:', error)
-    }
-  }
-
+export const ListAllBrands = ({ brands }) => {
   return (
-    <div>
-      <h1>List of all brands</h1>
-      {brands.map((brand) => (
-        <BrandCard key={brand._id} brand={brand} />
-      ))}
-      <button className={styles.refreshBtn} onClick={refreshList}>
-        Refresh List
-      </button>
+    <div className={styles.container}>
+      {brands && (
+        <>
+          {brands.map((brand) => (
+            <BrandCard key={brand._id} brand={brand} />
+          ))}
+        </>
+      )}
     </div>
   )
 }
