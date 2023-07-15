@@ -26,7 +26,9 @@ export default function BeerDetails() {
     <>
       {beerDetails ? (
         <div className={styles.container}>
-          <BeerCard beer={beerDetails} />
+          <div className={styles.beerCard}>
+            <BeerCard beer={beerDetails} />
+          </div>
           <div className={styles.brand}>
             <h2>Brand: {beerDetails.brandName}</h2>
             <p>Website: {beerDetails.url} </p>

@@ -1,51 +1,18 @@
 .container {
-  margin: 100px 0 0 250px;
+  margin: 100px 30px 0 250px;
   width: 70%;
   box-sizing: border-box;
   box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
-  padding: 40px;
+  padding: 40px 0 0 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 .brand {
-  margin: 50px;
+  margin: 1rem;
 }
-
-@media screen and (max-width: 415px) {
-  .container {
-    margin: 100px 0px 0px 0px;
-    width: 100%;
-
-    padding-left: 0px;
-  }
-  .brand {
-    margin: 10px 0px 80px 100px;
-  }
-}
-
-@media screen and (max-width: 720px) {
-  .container {
-    margin: 100px 0px 80px 80px;
-    width: 80%;
-
-    padding-left: 0px;
-  }
-  .brand {
-    margin: 10px 0px 80px 100px;
-  }
-}
-
-@media screen and (max-width: 820px) {
-  .container {
-    margin: 100px 0px 80px 120px;
-    width: 80%;
-
-    padding-left: 100px;
-  }
-  .brand {
-    margin: 10px 0px 80px 100px;
-  }
+.beerCard{
+  width: 100%;
 }
