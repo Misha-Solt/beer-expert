@@ -16,7 +16,7 @@ const __dirname = dirname(__filename) //extract directory from that location.
 
 dotenv.config()
 const app = express()
-const port = 3001
+const port = process.env.PORT || 3001
 
 //allows to parse json info from http body to req.body
 app.use(express.json())
