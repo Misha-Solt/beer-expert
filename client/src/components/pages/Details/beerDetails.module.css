@@ -1,7 +1,13 @@
 .container {
   margin: 100px 30px 0 250px;
   width: 70%;
-  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.fullBeerCard {
+  max-width: 740px;
   box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
   padding: 40px 0 0 50px;
@@ -13,6 +19,16 @@
 .brand {
   margin: 1rem;
 }
-.beerCard{
+.brand p {
+  margin: 10px 0 10px 0;
+}
+.beerCard {
   width: 100%;
+}
+.navi {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 3rem  0 0;
+  padding: 20px;
 }

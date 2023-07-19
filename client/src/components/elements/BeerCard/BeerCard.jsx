@@ -5,7 +5,7 @@ const BeerCard = ({ beer }) => {
     <div className={styles.card}>
       <img
         className={styles.image}
-        src="https://picsum.photos/300/300"
+        src={require('../../../data/beerImages/beer.png')}
         alt="beerPhoto"
       />
       <div>

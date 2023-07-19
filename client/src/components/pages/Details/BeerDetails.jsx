@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import styles from './beerDetails.module.css'
 import BeerCard from '../../elements/BeerCard/BeerCard'
+import BackButton from '../../elements/BackButton/BackButton'
+import ForwardButton from '../../elements/ForwardButton/ForwardButton'
 
 export default function BeerDetails() {
   const { beerId } = useParams()
@@ -22,24 +24,45 @@ export default function BeerDetails() {
     }
   }
 
+  const backLink = '/'
+  const forwardLink = '/find'
+  const nameBackLink = 'Go Back'
+  const nameForwardLink = 'Get all'
+
   return (
     <>
       {beerDetails ? (
         <div className={styles.container}>
-          <div className={styles.beerCard}>
-            <BeerCard beer={beerDetails} />
+          <div className={styles.fullBeerCard}>
+            <div className={styles.beerCard}>
+              <BeerCard beer={beerDetails} />
+            </div>
+            <div className={styles.brand}>
+              <h2>Brand: {beerDetails.brandName}</h2>
+              <p>
+                <strong>Website: </strong>
+                {beerDetails.url}{' '}
+              </p>
+              <p>
+                <strong>Brand Description: </strong>
+                {beerDetails.brandDescription}
+              </p>
+              <p>
+                <strong>MainAddress: </strong>
+                {beerDetails.mainAddress.country},{' '}
+                {beerDetails.mainAddress.land}
+                {beerDetails.mainAddress.city}, {beerDetails.mainAddress.street}{' '}
+                {beerDetails.mainAddress.number}, PLZ:{' '}
+                {beerDetails.mainAddress.plz}
+              </p>
+            </div>
+          <div className={styles.navi}>
+            <BackButton backLink={backLink} nameBackLink={nameBackLink} />
+            <ForwardButton
+              forwardLink={forwardLink}
+              nameForwardLink={nameForwardLink}
+            />
           </div>
-          <div className={styles.brand}>
-            <h2>Brand: {beerDetails.brandName}</h2>
-            <p>Website: {beerDetails.url} </p>
-            <p>Brand Description: {beerDetails.brandDescription}</p>
-            <p>
-              MainAddress: {beerDetails.mainAddress.country},{' '}
-              {beerDetails.mainAddress.land}
-              {beerDetails.mainAddress.city}, {beerDetails.mainAddress.street}{' '}
-              {beerDetails.mainAddress.number}, PLZ:{' '}
-              {beerDetails.mainAddress.plz}
-            </p>
           </div>
         </div>
       ) : (

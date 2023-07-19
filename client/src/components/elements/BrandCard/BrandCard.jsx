@@ -24,7 +24,6 @@
 
 //NEW UPDATED BRAND CARD for resolving search results
 
-import React from 'react'
 import BeerCard from '../../elements/BeerCard/BeerCard.jsx'
 import styles from './brandCard.module.css'
 
@@ -39,12 +38,20 @@ const BrandCard = ({ brand }) => {
   return (
     <div className={styles.brandListContainer}>
       <h2>{brandName}</h2>
-      <p>URL: {url}</p>
-      {brandDescription && <p>Description: {brandDescription}</p>}
+      <p>
+        <strong>URL: </strong>
+        {url}
+      </p>
+      {brandDescription && (
+        <p>
+          <strong>Description:</strong>
+          {brandDescription}
+        </p>
+      )}
       {mainAddress && (
         <p>
-          Main Address: {mainAddress.street}, {mainAddress.city},{' '}
-          {mainAddress.country}
+          <strong>Main Address:</strong>
+          {mainAddress.street}, {mainAddress.city}, {mainAddress.country}
         </p>
       )}
       {beers && beers.length > 0 && (

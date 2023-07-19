@@ -5,6 +5,7 @@
   align-items: center;
   margin: 40px 40px 60px 20px;
   width: 90%;
+  max-width: 800px;
   box-sizing: border-box;
   box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
