@@ -16,7 +16,9 @@ export default function BeerDetails() {
 
   const fetchBeerDetails = async () => {
     try {
-      const res = await axios.get(`http://localhost:3001/api/beers/${beerId}`)
+      // const res = await axios.get(`http://localhost:3001/api/beers/${beerId}`)
+      const res = await axios.get(`/api/beers/${beerId}`)
+
       const fetchedBeerDetails = res.data
       setBeerDetails(fetchedBeerDetails)
     } catch (error) {
