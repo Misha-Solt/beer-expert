@@ -29,6 +29,9 @@
   width: 100%;
   display: flex;
   justify-content: space-around;
-  margin: 0 3rem  0 0;
+  margin: 0 3rem 0 0;
   padding: 20px;
+}
+.empty {
+  height: 100px;
 }

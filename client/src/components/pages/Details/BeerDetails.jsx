@@ -56,14 +56,15 @@ export default function BeerDetails() {
                 {beerDetails.mainAddress.plz}
               </p>
             </div>
-          <div className={styles.navi}>
-            <BackButton backLink={backLink} nameBackLink={nameBackLink} />
-            <ForwardButton
-              forwardLink={forwardLink}
-              nameForwardLink={nameForwardLink}
-            />
+            <div className={styles.navi}>
+              <BackButton backLink={backLink} nameBackLink={nameBackLink} />
+              <ForwardButton
+                forwardLink={forwardLink}
+                nameForwardLink={nameForwardLink}
+              />
+            </div>
           </div>
-          </div>
+          <div className={styles.empty}></div>
         </div>
       ) : (
         <p>Loading beer details...</p>
