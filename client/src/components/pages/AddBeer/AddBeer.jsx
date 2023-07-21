@@ -31,7 +31,7 @@ const AddBeerForm = () => {
 
   const fetchBrands = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/brands')
+      const response = await fetch('/api/brands')
       const data = await response.json()
       setBrands(data)
     } catch (error) {
@@ -41,7 +41,7 @@ const AddBeerForm = () => {
 
   const fetchEnumValues = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/enum-values')
+      const response = await fetch('/api/enum-values')
       const data = await response.json()
       setEnumValues(data)
     } catch (error) {
@@ -90,7 +90,7 @@ const AddBeerForm = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:3001/api/add-beer/${selectedBrand}`,
+        `/api/add-beer/${selectedBrand}`,
         {
           method: 'PATCH',
           headers: {
