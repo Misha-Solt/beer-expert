@@ -220,6 +220,7 @@ export const searchByName = async (req, res) => {
   const searchQuery = req.query.search
 
   // Character mapping function that will help read ä ü ö as a u o
+  //This variation doesn't work properly in this case
 
   // const mapSpecialCharacters = (str) => {
   //   const characterMap = {
