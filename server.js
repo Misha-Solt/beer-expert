@@ -39,6 +39,11 @@ mongoose
 //start link for the server
 app.use('/api', beerRoutes)
 
+app.use('/api/files', beerRoutes)
+
+//the files inside the folder will be served by our server
+app.use('/uploads', express.static('./uploads'))
+
 //serve our files statically
 app.use(express.static(path.join(__dirname, 'client/build')))
 //any other request made serve the index.html of our production build frontend.

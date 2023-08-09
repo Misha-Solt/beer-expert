@@ -2,7 +2,7 @@ import { Schema } from 'mongoose'
 
 export const beerSchema = new Schema({
   beerName: { type: String, required: true },
-  beerPicture: { type: String, required: false },
+  beerImg: { type: String, required: false },
   beerType: {
     type: String,
     enum: [

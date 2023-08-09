@@ -5,7 +5,8 @@ const BeerCard = ({ beer }) => {
     <div className={styles.card}>
       <img
         className={styles.image}
-        src={require('../../../data/beerImages/beer.png')}
+        // src={require('../../../data/beerImages/beer.png')}
+        src={beer.beerImg}
         alt="beerPhoto"
       />
       <div>
