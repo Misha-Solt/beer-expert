@@ -33,7 +33,7 @@ function App() {
         <Route path="/find" element={<FindPage />} />
         <Route path="*" element={<h1>404</h1>} />
         <Route path="/randomBeer" element={<RandomBeerPage />} />
-        <Route path="/randomBeerDetails/:beerId" element={<BeerDetails />} />
+        <Route path="/beerDetails/:beerId" element={<BeerDetails />} />
       </Routes>
       <Footer />
     </div>

@@ -50,7 +50,7 @@ export default function RandomBeerPage() {
   return (
     <div className={styles.container}>
       <div className={styles.randomBeerPage}>
-        <Link to={`/randomBeerDetails/${beerId}`} className={styles.card}>
+        <Link to={`/beerDetails/${beerId}`} className={styles.card}>
           {randomBeer && <BeerCard beer={randomBeer} />}
         </Link>
         <RerollButton rerollRandomBeer={rerollRandomBeer} />
