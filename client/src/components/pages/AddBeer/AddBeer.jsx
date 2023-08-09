@@ -245,9 +245,7 @@ const AddBeerForm = () => {
                 />
                 <label className={styles.beerLabel}>Beer Name</label>
               </div>
-              {/* <div>
-                <input type="file" name="image" multiple={false} />
-              </div> */}
+
               <div>
                 <input
                   type="file"
