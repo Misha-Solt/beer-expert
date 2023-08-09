@@ -190,14 +190,11 @@
   color: var(--red);
 }
 
-@media screen and(max-width:415px) {
-  .menu {
-    inset: 15% 0 40px 10px;
-  }
+@media screen and (max-width: 720px) {
   .hamburger {
     display: none;
   }
-  .icon::after {
-    left: -50px;
+  .menu {
+    height: 380px;
   }
 }

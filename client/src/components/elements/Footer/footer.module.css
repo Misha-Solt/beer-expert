@@ -88,3 +88,9 @@
   font-size: 1.2rem;
   font-family: 'Atkinson Hyperlegible', sans-serif;
 }
+
+@media screen and (max-width: 660px) {
+  .textElement {
+    font-size: 1rem;
+  }
+}

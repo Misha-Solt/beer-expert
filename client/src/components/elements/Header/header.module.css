@@ -57,27 +57,30 @@
   text-shadow: rgb(100, 100, 100) 1px 0 1px;
   box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.7);
 }
-
-@media screen and (max-width: 415px) {
-  .name {
-    font-size: 1.5rem;
-  }
-  .login {
-    font-size: 1rem;
-  }
-  .flag {
-    display: none;
-  }
+.menu {
+  display: none;
 }
-
-@media screen and (max-width: 540px) {
+/* responsive design */
+@media screen and (max-width: 730px) {
   .name {
     font-size: 2rem;
+    padding: 0 10px;
   }
-  .login {
-    font-size: 1rem;
-  }
-  .flag {
+}
+@media screen and (max-width: 670px) {
+  .right {
     display: none;
+  }
+  .menu {
+    display: block;
+    width: 40px;
+    height: 100%;
+    margin-right: 10px;
+    margin-top: 14px;
+  }
+}
+@media screen and (max-width: 333px) {
+  .name {
+    font-size: 1.5rem;
   }
 }

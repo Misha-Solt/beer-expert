@@ -8,8 +8,8 @@
 
 .greeting {
   position: absolute;
-  left: 25%;
-  top: 13%;
+  right: 10%;
+  top: 11%;
   font-size: 8rem;
 }
 
@@ -29,15 +29,44 @@
   color: var(--red);
 }
 
-@media screen and (max-width: 415px) {
+/* responsive design */
+@media screen and (max-width: 940px), screen and (max-height: 900px) {
   .greeting {
-    font-size: 3rem;
-    margin-left: 10%;
-    margin-top: 10%;
+    font-size: 6rem;
+    margin-left: 15%;
+    margin-top: 5%;
   }
   .question {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-left: 10%;
     right: 10%;
+    text-align: end;
+  }
+}
+@media screen and (max-width: 660px) {
+  .greeting {
+    font-size: 3rem;
+    margin-left: 9%;
+    margin-right: 3%;
+    margin-top: 7%;
+    text-align: center;
+  }
+  .question {
+    font-size: 1.5rem;
+    margin-left: 10%;
+    top: 30%;
+    right: 10%;
+  }
+}
+@media screen and (max-width: 380px) {
+  .greeting {
+    font-size: 2.5rem;
+    margin-left: 45%;
+    text-align: right;
+    margin-top: 5%;
+    margin-right: 10px;
+  }
+  .question {
+    top: 30%;
   }
 }
