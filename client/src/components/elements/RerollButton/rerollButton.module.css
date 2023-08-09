@@ -502,72 +502,12 @@
   }
 }
 
-@media screen and (max-width: 415px) {
-  .button {
-    margin-left: 100px;
-    width: 200px;
-  }
-
+@media screen and (max-width: 660px) {
   .text {
-    /* font-size: 1rem; */
     display: none;
   }
-
-  /** cannot target text 'loading' to make it smaller... so I disable the text for smaller screens for now*/
-  .loading {
-    font-size: 1rem;
-  }
-  .beer {
-    width: 100px;
-    height: 100px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .glass {
-    width: 100px;
-    height: 100px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .handle {
-    width: 100px;
-    height: 100px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  #foamOut {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  #foamIn {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  #foamIn2 {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  #foamIn3 {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  #foamIn4 {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  .button {
+    width: 150px;
+    padding-left: 35px;
   }
 }
