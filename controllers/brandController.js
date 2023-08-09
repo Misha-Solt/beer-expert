@@ -49,12 +49,14 @@ export const addBeerBrand = async (req, res) => {
  */
 export const addBeer = async (req, res) => {
   try {
+    console.log(req.body)
     const updatedBrand = await Brand.findByIdAndUpdate(
       req.params.id,
       {
         $push: {
           beers: {
             beerName: req.body.beerName,
+            beerImg: req.file.path,
             beerType: req.body.beerType,
             fermentedType: req.body.fermentedType,
             beerDescription: req.body.beerDescription,
@@ -77,3 +79,86 @@ export const addBeer = async (req, res) => {
       .json({ message: error.message })
   }
 }
+
+// export const uploadImg = async (req, res) => {
+//   try {
+//     const uploadedImagePath = req.file.path
+//     const beerId = req.params.id
+
+//     await Brand.findOneAndUpdate(
+//       { 'beers._id': beerId },
+//       { $set: { 'beers.$.beerImg': uploadedImagePath } }
+//     )
+
+//     return res.status(StatusCodes.OK).json({ message: 'Image uploaded' })
+//   } catch (error) {
+//     console.error(error)
+//     return res
+//       .status(StatusCodes.INTERNAL_SERVER_ERROR)
+//       .json({ error: 'Image upload failed' })
+//   }
+// }
+
+// export const addBeer = async (req, res) => {
+//   try {
+//     const { brandId } = req.params
+
+//     const newBeer = {
+//       beerName: req.body.beerName,
+//       beerType: req.body.beerType,
+//       fermentedType: req.body.fermentedType,
+//       beerDescription: req.body.beerDescription,
+//       alcoholByVolume: req.body.alcoholByVolume,
+//       color: req.body.color,
+//       mouthfeel: req.body.mouthfeel,
+//       aroma: req.body.aroma,
+//       advRating: req.body.advRating,
+//       beerImg: req.file.path, // Set the beerImg field with the uploaded image path
+//     }
+
+//     const updatedBrand = await Brand.findByIdAndUpdate(
+//       brandId,
+//       { $push: { beers: newBeer } },
+//       { new: true }
+//     )
+
+//     if (!updatedBrand) {
+//       return res
+//         .status(StatusCodes.NOT_FOUND)
+//         .json({ message: 'Brand not found' })
+//     }
+
+//     return res
+//       .status(StatusCodes.OK)
+//       .json({ message: 'Beer added', updatedBrand })
+//   } catch (error) {
+//     res
+//       .status(StatusCodes.INTERNAL_SERVER_ERROR)
+//       .json({ message: error.message })
+//   }
+// }
+
+// export const uploadImg = async (req, res) => {
+//   console.log(req.file)
+//   try {
+//     const newImg = await Brand.findByIdAndUpdate(req.params.id, {
+//       $push: {
+//         beers: {
+//           beerImg: req.file.path,
+//         },
+//       },
+//     })
+//     return res
+//       .status(StatusCodes.OK)
+//       .json({ message: 'Image uploaded', newImg })
+//   } catch (error) {
+//     return res
+//       .status(StatusCodes.INTERNAL_SERVER_ERROR)
+//       .json({ message: error.message })
+//   }
+// }
+
+// export const uploadImg = async (req, res) => {
+//   console.log(req.file)
+//   return res.status(StatusCodes.OK).json({ message: 'Image uploaded' })
+// }

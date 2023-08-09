@@ -5,12 +5,15 @@ import ForwardButton from '../../elements/ForwardButton/ForwardButton'
 import styles from './addBeer.module.css'
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+// import { UploadForm } from '../../elements/UploadForm/UploadForm'
 
 const AddBeerForm = () => {
   const [brands, setBrands] = useState([])
   const [selectedBrand, setSelectedBrand] = useState('')
   const [enumValues, setEnumValues] = useState({})
   const [alcoholByVolumeInput, setAlcoholByVolumeInput] = useState('')
+
+  const [selectedImageFile, setSelectedImageFile] = useState(null)
 
   const [beerData, setBeerData] = useState({
     beerName: '',
@@ -85,20 +88,36 @@ const AddBeerForm = () => {
     }))
   }
 
+  const handleImageChange = (event) => {
+    setSelectedImageFile(event.target.files[0])
+    console.log('Selected image file:', event.target.files[0])
+  }
+
   const handleSubmit = async (event) => {
     event.preventDefault()
 
+    const formData = new FormData()
+    formData.append('image', selectedImageFile)
+    console.log(selectedImageFile)
+    // Append other form data fields to formData
+    formData.append('beerData', JSON.stringify(beerData))
+
+    //solution for mapping the object to the form data object
+    for (const [key, val] of Object.entries(beerData)) {
+      formData.append(key, val)
+    }
+    console.log('FormData:', Array.from(formData))
+
     try {
-      const response = await fetch(
-        `/api/add-beer/${selectedBrand}`,
-        {
-          method: 'PATCH',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(beerData),
-        }
-      )
+      const response = await fetch(`/api/add-beer/${selectedBrand}`, {
+        method: 'PATCH',
+        headers: {
+          // 'Content-Type': 'application/json',
+        },
+        // body: JSON.stringify(beerData),
+        body: formData,
+        credentials: 'include',
+      })
 
       const data = await response.json()
       console.log('Beer added:', data)
@@ -114,12 +133,14 @@ const AddBeerForm = () => {
         aroma: [],
         avgRating: '',
       })
+      setSelectedImageFile(null)
 
       setAlcoholByVolumeInput('')
     } catch (error) {
       console.log('Error adding beer:', error)
     }
   }
+
   const generateAromaColorMouthfeelOptions = (property) => {
     if (enumValues[property]) {
       return enumValues[property].map((value) => (
@@ -224,6 +245,18 @@ const AddBeerForm = () => {
                 />
                 <label className={styles.beerLabel}>Beer Name</label>
               </div>
+              {/* <div>
+                <input type="file" name="image" multiple={false} />
+              </div> */}
+              <div>
+                <input
+                  type="file"
+                  accept="image/*"
+                  name="image"
+                  onChange={handleImageChange}
+                />
+              </div>
+
               <select
                 className={styles.selectBeerProp}
                 name="beerType"
@@ -313,6 +346,9 @@ const AddBeerForm = () => {
           </div>
         )}
       </div>
+      {/* <div>
+        <UploadForm />
+      </div> */}
       <div className={styles.empty}></div>
     </>
   )

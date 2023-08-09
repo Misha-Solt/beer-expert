@@ -273,3 +273,14 @@ export const searchByName = async (req, res) => {
       .json({ message: error.message })
   }
 }
+
+// export const uploadImg = async (req, res) => {
+//   console.log(req.file)
+//   try {
+//     const newImg = await Brand.create({
+
+//     })
+//   }
+
+//   return res.status(StatusCodes.OK).json({ message: 'Image uploaded' })
+// }

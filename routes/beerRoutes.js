@@ -1,4 +1,5 @@
 import express from 'express'
+import multer from 'multer'
 
 //functions for listing beers imported from BEER controller
 import {
@@ -17,6 +18,7 @@ import {
   listBeerBrands,
   addBeerBrand,
   addBeer,
+  // uploadImg,
 } from '../controllers/brandController.js'
 
 const beerRoutes = express.Router()
@@ -91,13 +93,33 @@ beerRoutes.post('/add-brand', addBeerBrand)
 //   "advRaiting": "9"
 // }
 
-beerRoutes.patch('/add-beer/:id', addBeer)
-
 // -------------------------------------------------
 //Searching (filtering) Beer Routes
 // Find Beer by beerType
 //GET http://localhost:3001/api/beers/by-type/type?beerType=WEIZEN
 beerRoutes.get('/beers/by-type/type', filterBeersByType)
 // -------------------------------------------------
+
+//Multer storage configuration
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, './uploads')
+  },
+  //name of files must be unique
+  filename: (req, file, cb) => {
+    console.log('mimetype file', file.mimetype)
+    const ext = file.mimetype.split('/')[1]
+    const originalImgName = file.originalname.split('.')[0]
+    // create a unique name by (original name) + (-) + (date n milliseconds) + (.extension)
+    cb(null, `${originalImgName}-${Date.now()}.${ext}`)
+  },
+})
+//initialize the multer middleware here
+const upload = multer({ storage: storage })
+
+//the upload.single('image') is the middleware that will handle the file upload and 'image' stands for the name='image' in UploadForm component
+// beerRoutes.post('/upload', upload.single('image'), uploadImg)
+
+beerRoutes.patch('/add-beer/:id', upload.single('image'), addBeer)
 
 export default beerRoutes
