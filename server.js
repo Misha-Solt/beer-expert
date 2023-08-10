@@ -48,7 +48,7 @@ app.use('/uploads', express.static('./uploads'))
 app.use(express.static(path.join(__dirname, 'client/build')))
 //any other request made serve the index.html of our production build frontend.
 app.get('*', (req, res) => {
-  res.sendFile(__dirname + '/client/build/index.html')
+  res.sendFile(__dirname + "/client/build/index.html")
 })
 
 app.listen(port, () => {
