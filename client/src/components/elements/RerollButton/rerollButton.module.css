@@ -511,3 +511,11 @@
     padding-left: 35px;
   }
 }
+@media screen and (max-width: 415px) {
+  .text {
+    display: none;
+  }
+  .button {
+    width: 130px;
+  }
+}

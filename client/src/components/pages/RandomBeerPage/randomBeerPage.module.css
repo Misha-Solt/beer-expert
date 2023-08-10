@@ -2,13 +2,11 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  width: 87%;
-  margin: 100px 0px 0px 100px;
+  margin: 135px 30px 0 27%;
 }
 .randomBeerPage {
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -23,30 +21,22 @@
   justify-content: space-between;
 }
 .empty {
+  width: 20px;
   height: 90px;
 }
 
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 940px) {
   .container {
-    margin: 100px 0px 0px 0px;
+    margin: 135px 30px 0 37%;
   }
-  .randomBeerPage {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+}
+@media screen and (max-width: 720px) {
+  .container {
+    margin: 185px 10px 0 15%;
   }
-  .card {
-    text-decoration: none;
-  }
-  .bottom {
-    margin-left: 120px;
-    width: 60%;
-    display: flex;
-    justify-content: space-evenly;
-  }
-  .empty {
-    height: 90px;
+}
+@media screen and (max-width: 520px) {
+  .container {
+    margin: 155px 0 0 17%;
   }
 }

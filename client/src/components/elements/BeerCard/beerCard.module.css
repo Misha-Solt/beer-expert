@@ -64,17 +64,4 @@
   }
 }
 
-@media screen and (max-width: 415px) {
-  .card {
-    width: 250px;
-    margin: 20px 0px 0px 120px;
-    padding-left: 30px;
-    padding-right: 30px;
-    text-align: center;
-    flex-direction: column;
-  }
-  .image {
-    margin: -50px 0 30px 0;
-    width: 100%;
-  }
-}
+
