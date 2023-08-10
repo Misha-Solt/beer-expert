@@ -5,7 +5,6 @@ import ForwardButton from '../../elements/ForwardButton/ForwardButton'
 import styles from './addBeer.module.css'
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-// import { UploadForm } from '../../elements/UploadForm/UploadForm'
 
 const AddBeerForm = () => {
   const [brands, setBrands] = useState([])
@@ -14,6 +13,9 @@ const AddBeerForm = () => {
   const [alcoholByVolumeInput, setAlcoholByVolumeInput] = useState('')
 
   const [selectedImageFile, setSelectedImageFile] = useState(null)
+
+  //useState for styling the image input
+  const [selectedFileName, setSelectedFileName] = useState('No file selected')
 
   const [beerData, setBeerData] = useState({
     beerName: '',
@@ -26,6 +28,16 @@ const AddBeerForm = () => {
     aroma: [],
     avgRating: '',
   })
+
+  // const handleFileChange = (event) => {
+  //   const selectedFile = event.target.files[0];
+
+  //   if (selectedFile) {
+  //     setSelectedFileName(selectedFile.name);
+  //   } else {
+  //     setSelectedFileName('No file selected');
+  //   }
+  // };
 
   useEffect(() => {
     fetchBrands()
@@ -91,6 +103,14 @@ const AddBeerForm = () => {
   const handleImageChange = (event) => {
     setSelectedImageFile(event.target.files[0])
     console.log('Selected image file:', event.target.files[0])
+
+    const selectedFile = event.target.files[0]
+
+    if (selectedFile) {
+      setSelectedFileName(selectedFile.name)
+    } else {
+      setSelectedFileName('No file selected')
+    }
   }
 
   const handleSubmit = async (event) => {
@@ -246,13 +266,30 @@ const AddBeerForm = () => {
                 <label className={styles.beerLabel}>Beer Name</label>
               </div>
 
-              <div>
+              {/* <div>
                 <input
+                  className={styles.imgInput}
                   type="file"
                   accept="image/*"
                   name="image"
                   onChange={handleImageChange}
                 />
+              </div> */}
+              <div>
+                <input
+                  className={styles.inputHidden}
+                  type="file"
+                  accept="image/*"
+                  name="image"
+                  onChange={handleImageChange}
+                  id="fileInput"
+                />
+                <label for="fileInput" className={styles.customInputFile}>
+                  Choose an Image
+                </label>
+                <span className={styles.fileNameDisplay}>
+                  {selectedFileName}
+                </span>
               </div>
 
               <select
@@ -344,9 +381,7 @@ const AddBeerForm = () => {
           </div>
         )}
       </div>
-      {/* <div>
-        <UploadForm />
-      </div> */}
+
       <div className={styles.empty}></div>
     </>
   )
