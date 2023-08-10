@@ -1,14 +1,12 @@
 .card {
   display: flex;
   align-items: center;
-  /* width: 100%; */
   max-width: 650px;
   border-radius: 12px;
   text-align: center;
   padding: 24px;
   margin: 10px;
   background-color: var(--cards-bg);
-  /* background: linear-gradient(150deg, rgba(0,0,0,0.3) 15%, rgba(207,0,0,0.3) 55%, rgba(255,204,0,0.3) 100%); */
   box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.15);
 }
 .image {
@@ -17,7 +15,7 @@
   height: 270px;
   object-fit: cover;
   margin-left: -60px;
-  margin-right: 40px;
+  margin-right: 20px;
   border-radius: inherit;
 }
 .card h2 {
@@ -52,9 +50,9 @@
 
 @media (width <= 720px) {
   .card {
-    margin: 16px 40px;
-    padding-left: 50px;
-    padding-right: 50px;
+    margin: 16px 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     text-align: center;
     flex-direction: column;
   }
@@ -63,5 +61,17 @@
     width: 100%;
   }
 }
-
+@media screen and (max-width: 520px) {
+  .card {
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    flex-direction: column;
+  }
+  .image {
+    margin: -100px 0 30px 0;
+    width: 85%;
+  }
+}
 

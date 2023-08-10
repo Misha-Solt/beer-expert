@@ -1,6 +1,5 @@
 .container {
-  margin: 100px 30px 0 250px;
-  width: 70%;
+  margin: 100px 30px 0 230px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,7 +9,7 @@
   max-width: 740px;
   box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
-  padding: 40px 0 0 50px;
+  padding: 40px 10px 0 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,9 +28,22 @@
   width: 100%;
   display: flex;
   justify-content: space-around;
-  margin: 0 3rem 0 0;
   padding: 20px;
 }
 .empty {
   height: 100px;
+}
+
+@media screen and (max-width: 720px) {
+  .container {
+    margin: 100px 30px 0 120px;
+  }
+  .fullBeerCard {
+    padding: 80px 0 0 0;
+  }
+}
+@media screen and (max-width: 520px) {
+  .container {
+    margin:  100px 10px 0 105px;
+  }
 }
