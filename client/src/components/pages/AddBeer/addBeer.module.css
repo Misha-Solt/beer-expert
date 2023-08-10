@@ -142,3 +142,33 @@
   gap: 1rem;
   margin: 2rem;
 }
+
+.inputHidden {
+  display: none;
+}
+
+.customInputFile {
+  display: inline-block;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 15px 30px;
+  background-color: var(--yellow);
+  box-shadow: 0 8px 8px -8px var(--grey);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 12px;
+}
+
+.customInputFile:hover {
+  background-color: orange; /* Change color on hover */
+}
+
+.fileNameDisplay {
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--grey);
+}
