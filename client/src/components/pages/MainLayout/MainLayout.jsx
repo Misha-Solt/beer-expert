@@ -8,7 +8,7 @@ const MainLayout = () => {
       <br />
       <h3 className={styles.question}>
         Today is a great time for a <span className={styles.beer}>beer;)</span>{' '}
-        Isn't it? Test test
+        Isn't it?
       </h3>
       <RandomButton />
     </div>
