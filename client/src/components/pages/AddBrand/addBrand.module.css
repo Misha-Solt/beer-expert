@@ -1,6 +1,6 @@
 .brandContainer {
-  margin: 100px 0 0 250px;
-  width: 70%;
+  margin: 100px 20px 0 230px;
+  max-width: 70%;
   box-sizing: border-box;
   box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
@@ -75,4 +75,18 @@
   display: block;
   width: 100%;
   height: 120px;
+}
+
+@media screen and (max-width: 720px) {
+  .brandContainer {
+    margin: 100px 20px 0 120px;
+    max-width: none;
+    padding: 25px;
+  }
+  .formButton {
+    margin: 20px;
+  }
+  .buttonBox {
+    margin-top: 0;
+  }
 }

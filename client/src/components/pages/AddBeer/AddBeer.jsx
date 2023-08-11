@@ -372,12 +372,16 @@ const AddBeerForm = () => {
         )}
         {!selectedBrand && (
           <div className={styles.brandQuestion}>
-            <BackButton backLink={backLink} nameBackLink={nameBackLink} />
-            <h2>Didn't find a Brand? Add new one!</h2>
-            <ForwardButton
-              forwardLink={forwardLink}
-              nameForwardLink={nameForwardLink}
-            />
+            <div>
+              <h2>Didn't find a Brand? Add new one!</h2>
+            </div>
+            <div className={styles.navigation}>
+              <BackButton backLink={backLink} nameBackLink={nameBackLink} />
+              <ForwardButton
+                forwardLink={forwardLink}
+                nameForwardLink={nameForwardLink}
+              />
+            </div>
           </div>
         )}
       </div>

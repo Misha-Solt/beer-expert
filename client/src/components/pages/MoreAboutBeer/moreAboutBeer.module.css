@@ -1,12 +1,15 @@
 .mainContainer {
-  margin: 100px 30px 0 250px;
-  width: 70%;
+  margin: 15% 20px 0 230px;
+  max-width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.textBlock{
+.mainContainer h1 {
+  text-align: center;
+}
+.textBlock {
   max-width: 800px;
   box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
@@ -17,20 +20,42 @@
   flex-direction: column;
   font-size: 1.1rem;
 }
-.mainContainer h1{
+.mainContainer h1 {
   color: var(--red);
-  margin: 30px;
+  margin-bottom: 30px;
 }
-.textBlock h3{
+.textBlock h3 {
   margin-bottom: 10px;
 }
-.textBlock strong{
+.textBlock strong {
   color: var(--red);
 }
 .navi {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  margin: 0 3rem  0 0;
-  padding: 20px;
+  margin-top: 20px;
+}
+.empty {
+  display: block;
+  width: 100%;
+  height: 120px;
+}
+
+@media screen and (max-width: 720px) {
+  .mainContainer {
+    margin: 100px 20px 0 130px;
+    max-width: none;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 520px) {
+  .mainContainer {
+    margin: 100px 20px 0 130px;
+    padding: 0;
+  }
+  .navi {
+    margin: 20px 0 20px 0;
+    justify-content: space-between;
+  }
 }

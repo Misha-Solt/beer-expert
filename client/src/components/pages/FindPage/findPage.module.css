@@ -1,49 +1,43 @@
 .container {
-  margin-top: 100px;
-  margin-left: 100px;
-}
-
-.listAllBrands {
-  display: flex;
+  margin: 100px 0 0 170px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 40px;
 }
 .controlPanel {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: baseline;
-}
-
-.searchResults {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  align-items: baseline;
 }
-
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+.searchResults {
+  margin-left: 80px;
+}
 .showBtn {
   font-size: 1rem;
   font-weight: 600;
   padding: 15px 30px;
+  margin: 0px 10px;
   background-color: var(--yellow);
   box-shadow: 0 10px 20px -8px var(--grey);
   border: none;
   cursor: pointer;
   transition: all 0.3s;
   border-radius: 12px;
-  margin: 20px;
 }
-
 .searchBar {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
 }
 
 .searchBtn {
   font-size: 1rem;
   font-weight: 600;
-  padding: 5px 30px;
-  height: 42px;
-  margin: 0px 5px;
+  padding: 15px 30px;
+  margin: 0px 10px;
   background-color: var(--yellow);
   box-shadow: 0 10px 20px -8px var(--grey);
   border: none;
@@ -53,17 +47,56 @@
 }
 
 .searchInput {
-  width: 100%;
+  width: 250px;
   padding: 10px;
   font-size: 16px;
   color: var(--gray);
-  margin-bottom: 30px;
   border: 2px solid var(--red);
   border-radius: 12px;
   outline: none;
   background: transparent;
 }
 
+.listAllBrands {
+  display: flex;
+}
+
 .empty {
   height: 90px;
+}
+@media screen and (max-width: 1120px) {
+  .controlPanel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .container {
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .controlPanel {
+    margin-bottom: 0;
+    padding-top: 20px;
+  }
+  .container {
+    padding-left: 0;
+    padding-top: 0;
+    margin-left: 130px;
+  }
+  .searchResults {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 555px) {
+  .searchBar {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .buttons {
+    flex-direction: column;
+    gap: 16px;
+  }
 }

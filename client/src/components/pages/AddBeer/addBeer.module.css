@@ -1,6 +1,6 @@
 .container {
-  margin: 100px 0 0 250px;
-  width: 70%;
+  margin: 100px 20px 0 230px;
+  max-width: 70%;
   box-sizing: border-box;
   box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
@@ -13,8 +13,6 @@
   font-size: 16px;
   color: var(--gray);
   margin-bottom: 30px;
-  /* border: none; */
-  /* border-bottom: 2px solid var(--red); */
   border: 2px solid var(--red);
   border-radius: 12px;
   outline: none;
@@ -23,6 +21,7 @@
 
 .addBeerHeader {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .selectBeerProp {
@@ -83,7 +82,7 @@
 
 .optionCheckbox:checked + .checkboxLabel {
   background: var(--red);
-  color: white;
+  color: var(--background);
 }
 .checkboxLabel {
   font-size: 16px;
@@ -131,7 +130,6 @@
 
 .noBrandQuestion {
   display: flex;
-
   gap: 1rem;
   margin: 2rem;
 }
@@ -139,10 +137,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  margin: 2rem;
+  flex-direction: column;
+}
+.brandQuestion h2{
+  text-align: center;
+  margin: 40px;
 }
 
+.navigation {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
 .inputHidden {
   display: none;
 }
@@ -163,7 +169,7 @@
 }
 
 .customInputFile:hover {
-  background-color: orange; /* Change color on hover */
+  background-color: var(--red);
 }
 
 .fileNameDisplay {
@@ -171,4 +177,34 @@
   margin-left: 0.5rem;
   font-size: 0.8rem;
   color: var(--grey);
+}
+
+@media screen and (max-width: 720px) {
+  .container {
+    margin: 100px 20px 0 120px;
+    max-width: none;
+    padding: 25px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .container {
+    margin: 100px 20px 0 105px;
+    padding: 15px;
+  }
+  .addBeerHeader {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  .brandQuestion h2 {
+    font-size: 1rem;
+    margin: 20px;
+  }
+  .checkboxContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    gap: 1.5rem;
+    margin: 15px 0 15px 0;
+  }
 }

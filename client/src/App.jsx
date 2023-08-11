@@ -10,7 +10,7 @@ import AddBeerOrBrandPage from './components/pages/AddBeerOrBrandPage/AddBeerOrB
 import AddBrand from './components/pages/AddBrand/AddBrand.jsx'
 import AddBeer from './components/pages/AddBeer/AddBeer.jsx'
 
-import ListAllBrands from './components/pages/ListAllBrands/ListAllBrands.jsx'
+import ListAllBrands from './components/elements/ListAllBrands/ListAllBrands.jsx'
 import MoreAboutBeer from './components/pages/MoreAboutBeer/MoreAboutBeer.jsx'
 import FindPage from './components/pages/FindPage/FindPage.jsx'
 

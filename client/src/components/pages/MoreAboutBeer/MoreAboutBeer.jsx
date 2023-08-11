@@ -33,6 +33,7 @@ export default function MoreAboutBeer() {
           nameForwardLink={nameForwardLink}
         />
       </div>
+      <div className={styles.empty}></div>
     </div>
   )
 }

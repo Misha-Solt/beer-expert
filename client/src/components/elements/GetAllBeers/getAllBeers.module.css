@@ -1,0 +1,14 @@
+.allBeersContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.element {
+  margin-top: 20px;
+}
+@media screen and (max-width: 720px) {
+  .element {
+    margin-top: 95px;
+  }
+}

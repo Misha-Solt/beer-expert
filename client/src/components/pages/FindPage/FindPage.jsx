@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styles from './findPage.module.css'
 import axios from 'axios'
-import FindPageResults from '../FindPageResults/FindPageResults'
+import FindPageResults from '../../elements/FindPageResults/FindPageResults'
 
 export default function FindBrandOrBeer() {
   const [searchQuery, setSearchQuery] = useState('')

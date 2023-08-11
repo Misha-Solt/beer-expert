@@ -1,6 +1,6 @@
 {
-  "name": "99-template",
-  "version": "0.1.0",
+  "name": "beer-expert",
+  "version": "1.0",
   "private": true,
   "proxy": "http://localhost:3001",
   "dependencies": {
@@ -43,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }

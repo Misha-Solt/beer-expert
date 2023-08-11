@@ -6,10 +6,10 @@
   margin-left: 100px;
 }
 .addButtonBox {
-  margin-top: 100px;
+  margin-top: 15%;
   display: flex;
   justify-content: space-evenly;
-  width: 80%;
+  max-width: 60%;
 }
 
 .addButton {
@@ -37,15 +37,17 @@
   box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.15);
 }
 
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 840px) {
   .addButtonBox {
     flex-direction: column;
     align-items: center;
+    margin-top: 120px;
+    text-align: center;
   }
   .addButton {
     margin: 10px;
   }
   .btnBox {
-    width: 80%;
+    width: 100%;
   }
 }
