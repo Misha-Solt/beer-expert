@@ -10,7 +10,6 @@ import AddBeerOrBrandPage from './components/pages/AddBeerOrBrandPage/AddBeerOrB
 import AddBrand from './components/pages/AddBrand/AddBrand.jsx'
 import AddBeer from './components/pages/AddBeer/AddBeer.jsx'
 
-import ListAllBrands from './components/elements/ListAllBrands/ListAllBrands.jsx'
 import MoreAboutBeer from './components/pages/MoreAboutBeer/MoreAboutBeer.jsx'
 import FindPage from './components/pages/FindPage/FindPage.jsx'
 
@@ -26,7 +25,6 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout />} />
         <Route path="/addBeerOrBrand" element={<AddBeerOrBrandPage />} />
-        <Route path="/brands" element={<ListAllBrands />} />
         <Route path="/moreAboutBeer" element={<MoreAboutBeer />} />
         <Route path="/addBrand" element={<AddBrand />} />
         <Route path="/addBeer" element={<AddBeer />} />

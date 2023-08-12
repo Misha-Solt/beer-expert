@@ -32,8 +32,6 @@ export default function FindBrandOrBeer() {
 
   //Function to show all brands from ListAllBrands Component
   const showBrands = async () => {
-    console.log('refreshing list')
-
     try {
       const res = await axios.get('/api/brands')
       setSearchResults(null) //set search results to null to hide the search results
