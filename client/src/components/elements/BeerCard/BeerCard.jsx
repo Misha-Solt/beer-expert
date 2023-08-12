@@ -3,13 +3,8 @@ import styles from './beerCard.module.css'
 const BeerCard = ({ beer }) => {
   return (
     <div className={styles.card}>
-      <img
-        className={styles.image}
-        // src={require('../../../data/beerImages/beer.png')}
-        src={`/${beer.beerImg}`}
-        alt="beerPhoto"
-      />
-      <div>
+      <img className={styles.image} src={`/${beer.beerImg}`} alt="beerPhoto" />
+      <div className={styles.text}>
         <h2>{beer.beerName}</h2>
         <h5>{beer.beerDescription}</h5>
         <div className={styles.options}>

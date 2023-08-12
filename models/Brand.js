@@ -1,5 +1,4 @@
 import { Schema, model } from 'mongoose'
-
 import { beerSchema } from './Beer.js'
 
 const brandSchema = new Schema({

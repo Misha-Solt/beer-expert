@@ -4,10 +4,8 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   max-width: 700px;
-  box-sizing: border-box;
+  width: 100%;
   box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
 }
@@ -21,7 +19,12 @@
   margin: 5px 0 0 40px;
 }
 @media screen and (max-width: 720px) {
+  .brandCardContainer {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
   .element {
-    margin-top: 75px;
+    margin: 100px 0 0 0;
   }
 }

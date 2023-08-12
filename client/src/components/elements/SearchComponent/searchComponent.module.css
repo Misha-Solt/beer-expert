@@ -1,4 +1,5 @@
 .container {
+  width: 100%;
   margin: 10px 0 0 -80px;
   display: flex;
   flex-direction: column;
@@ -6,6 +7,9 @@
   justify-content: center;
 }
 .brandElement {
+  display: flex;
+  justify-content: center;
+  width: 100%;
   margin: 20px 0;
 }
 .beerElement {
@@ -14,9 +18,11 @@
 
 @media screen and (max-width: 720px) {
   .beerElement {
-    margin: 70px -10px 0 0;
+    width: 100%;
+    margin: 90px -10px 0 0;
   }
   .container {
+    width: 100%;
     margin: 10px 0 0 0px;
   }
 }
