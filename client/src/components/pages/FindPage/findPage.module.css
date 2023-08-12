@@ -1,8 +1,7 @@
 .container {
-  margin: 100px 0 0 170px;
+  margin: 100px 0 0 220px;
   box-sizing: border-box;
   border-radius: 12px;
-  padding: 40px;
 }
 .controlPanel {
   display: flex;
@@ -73,7 +72,7 @@
     gap: 1.5rem;
   }
   .container {
-    padding: 20px;
+    padding: 0 20px 0 0;
   }
 }
 @media screen and (max-width: 720px) {

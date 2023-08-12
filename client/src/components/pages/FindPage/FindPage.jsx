@@ -18,7 +18,6 @@ export default function FindBrandOrBeer() {
 
   //Function to show all beers from GetAllBeers Component
   const showBeers = async () => {
-    console.log('refreshing list')
     try {
       const res = await axios.get('/api/beers')
 

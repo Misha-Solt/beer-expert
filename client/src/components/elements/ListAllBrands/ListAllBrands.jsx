@@ -9,7 +9,9 @@ export const ListAllBrands = ({ brands }) => {
       {brands && (
         <>
           {brands.map((brand) => (
-            <BrandCard key={brand._id} brand={brand} />
+            <div className={styles.element} key={`element${brand._id}`}>
+              <BrandCard key={brand._id} brand={brand} />
+            </div>
           ))}
         </>
       )}

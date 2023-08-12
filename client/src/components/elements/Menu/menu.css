@@ -197,4 +197,10 @@
   .menu {
     height: 380px;
   }
+  .menu.active {
+    width: 75px;
+  }
+  .text{
+    display: none;
+  }
 }

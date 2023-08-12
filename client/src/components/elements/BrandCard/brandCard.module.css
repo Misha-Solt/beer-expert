@@ -1,13 +1,27 @@
-.brandListContainer {
+.brandCardContainer {
+  margin: 0 10px 0 10px;
+  padding: 5px;
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 40px 40px 60px 20px;
-  width: 90%;
-  max-width: 800px;
+  max-width: 700px;
   box-sizing: border-box;
   box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
-  padding: 40px;
+}
+.brandCardContainer h2 {
+  margin: 10px 0;
+}
+.brandCardContainer p {
+  margin: 5px;
+}
+.element {
+  margin: 5px 0 0 40px;
+}
+@media screen and (max-width: 720px) {
+  .element {
+    margin-top: 75px;
+  }
 }

@@ -1,16 +1,27 @@
 import React from 'react'
 import BrandCard from '../../elements/BrandCard/BrandCard'
 import BeerCard from '../../elements/BeerCard/BeerCard'
+import styles from './searchComponent.module.css'
 
 const SearchComponent = ({ searchResults }) => {
   return (
-    <div>
+    <div className={styles.container}>
       {searchResults &&
         searchResults.map((result) =>
           result.beerName ? (
-            <BeerCard key={result._id} beer={result} />
+            <div
+              className={styles.beerElement}
+              key={`beerElement${result._id}`}
+            >
+              <BeerCard key={result._id} beer={result} />
+            </div>
           ) : (
-            <BrandCard key={result._id} brand={result} />
+            <div
+              className={styles.brandElement}
+              key={`brandElement${result._id}`}
+            >
+              <BrandCard key={result._id} brand={result} />
+            </div>
           )
         )}
     </div>

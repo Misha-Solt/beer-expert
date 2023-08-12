@@ -7,7 +7,7 @@ export default function GetAllBeers({ beers }) {
     <div className={styles.allBeersContainer}>
       <>
         {beers?.map((beer) => (
-          <div className={styles.element}>
+          <div className={styles.element} key={`element.${beer._id}`}>
             <BeerCard key={beer._id} beer={beer} />
           </div>
         ))}

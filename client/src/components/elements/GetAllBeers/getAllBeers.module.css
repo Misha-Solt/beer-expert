@@ -5,10 +5,11 @@
   flex-direction: column;
 }
 .element {
-  margin-top: 20px;
+  margin: 20px -7px 0 -30px;
 }
 @media screen and (max-width: 720px) {
   .element {
     margin-top: 95px;
+    margin-left: -20px;
   }
 }

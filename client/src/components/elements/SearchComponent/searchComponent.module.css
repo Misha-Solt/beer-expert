@@ -1,0 +1,22 @@
+.container {
+  margin: 10px 0 0 -80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.brandElement {
+  margin: 20px 0;
+}
+.beerElement {
+  margin-left: 60px;
+}
+
+@media screen and (max-width: 720px) {
+  .beerElement {
+    margin: 70px -10px 0 0;
+  }
+  .container {
+    margin: 10px 0 0 0px;
+  }
+}
