@@ -32,11 +32,6 @@
 }
 @media screen and (max-width: 720px) {
   .container {
-    margin: 185px 10px 0 15%;
-  }
-}
-@media screen and (max-width: 520px) {
-  .container {
-    margin: 165px 10px 0 25%;
+    margin: 185px 10px 0 110px;
   }
 }
