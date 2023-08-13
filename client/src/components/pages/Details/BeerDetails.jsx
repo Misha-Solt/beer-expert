@@ -12,6 +12,7 @@ export default function BeerDetails() {
 
   useEffect(() => {
     fetchBeerDetails()
+    // eslint-disable-next-line
   }, [beerId])
 
   const fetchBeerDetails = async () => {
