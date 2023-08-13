@@ -12,7 +12,7 @@ export default function BeerDetails() {
 
   useEffect(() => {
     fetchBeerDetails()
-  })
+  }, [beerId])
 
   const fetchBeerDetails = async () => {
     try {
