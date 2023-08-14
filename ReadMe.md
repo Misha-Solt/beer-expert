@@ -1,4 +1,4 @@
-<h1 align="center">
+f<h1 align="center">
   <br>
   <a href="https://beer-expert.de"><img src="https://beer-expert.de/apple-touch-icon.png" alt="Logo" width="180"></a>
   <br>
@@ -69,4 +69,3 @@ This application uses:
 > [Email](mailto:oksana.schers@gmail.com) &nbsp;&middot;&nbsp;
 > GitHub [@OksanaSherstiuk](https://github.com/OksanaSherstiuk) &nbsp;&middot;&nbsp;
 > LinkedIn [@oksana-schers](https://www.linkedin.com/in/mikhail-usoltsev/)
-> LinkedIn [@oksana-schers](https://www.linkedin.com/in/oksana-schers/)
