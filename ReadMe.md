@@ -1,4 +1,4 @@
-f<h1 align="center">
+<h1 align="center">
   <br>
   <a href="https://beer-expert.de"><img src="https://beer-expert.de/apple-touch-icon.png" alt="Logo" width="180"></a>
   <br>
