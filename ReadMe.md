@@ -6,7 +6,7 @@
   <br>
 </h1>
 
-<h4 align="center">This project is an attempt to organize information about more than 1,500 breweries in Germany, create a convenient tool for organizing information and create a tool to facilitate the selection</h4>
+<h4 align="center">This project is an attempt to organise information on more than 1,500 breweries in Germany and to create a tool to facilitate selection.</h4>
 
 <p align="center">
   <a href="#idea">Idea</a> •
