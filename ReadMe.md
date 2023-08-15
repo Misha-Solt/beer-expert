@@ -22,7 +22,7 @@
 Our small team was tasked with creating a final project after completing a software development course. We had a lot of different ideas in different areas.... We wanted the final project to not only incorporate the tools we had learnt, but also be an additional motivation to learn new ones.
 The theme of the app was also important. We wanted to find something that every German resident could understand. Beer looked like a fairly suitable example to us.
 Based on [Deutscher Brauer Bund e.V.](https://brauer-bund.de/) data, there are more than 1,500 breweries in Germany that produce more than 7,000 beers.  It looks like there is a wide range of products to choose from and categorize😉
-# Ordnung muss sein👍
+Ordnung muss sein👍
 
 > **Note**
 > The authors of this resource are not promoting the consumption of alcoholic beverages. Any beer consumed during the project is considered to be for educational purposes😁 Residents of Germany under the age of 16 should avoid using this application as well as drinking beer.
