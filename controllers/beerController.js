@@ -174,69 +174,8 @@ export const getEnums = async (req, res) => {
   res.json(enums)
 }
 
-//   Improved version that shows enums, bt don't show Arrays of enums
-
-// export const getEnums = async (req, res) => {
-//   const enums = {}
-//   Object.keys(beerSchema.paths).forEach((path) => {
-//     if (beerSchema.paths[path].enumValues) {
-//       enums[path] = beerSchema.paths[path].enumValues
-//     }
-//   })
-
-//   res.json(enums)
-// }
-
-//Very first version that shows by type
-
-// export const getEnums = async (req, res) => {
-//   const { enumValues } = beerSchema.path('beerType')
-//   res.json(enumValues)
-// }
-
-//search beer or brand by name
-// export const searchByName = async (req, res) => {
-//   const searchQuery = req.query.search
-//   try {
-//     const brands = await Brand.find({
-//       brandName: { $regex: searchQuery, $options: 'i' },
-//     })
-//     const beers = await Brand.aggregate([
-//       { $unwind: '$beers' },
-//       { $match: { 'beers.beerName': { $regex: searchQuery, $options: 'i' } } },
-//       { $replaceRoot: { newRoot: '$beers' } },
-//     ])
-
-//     const searchResults = [...brands, ...beers]
-//     return res.status(StatusCodes.OK).json(searchResults)
-//   } catch (error) {
-//     res
-//       .status(StatusCodes.INTERNAL_SERVER_ERROR)
-//       .json({ message: error.message })
-//   }
-// }
-
 export const searchByName = async (req, res) => {
   const searchQuery = req.query.search
-
-  // Character mapping function that will help read ä ü ö as a u o
-  //This variation doesn't work properly in this case
-
-  // const mapSpecialCharacters = (str) => {
-  //   const characterMap = {
-  //     ü: 'u',
-  //     ä: 'a',
-  //     ö: 'o',
-  //   }
-  //   return str.replace(/[üäö]/g, (match) => characterMap[match])
-  // }
-
-  // const beers = await Brand.aggregate([
-  //   { $match: { $text: { $search: 'hofbrau' } } },
-  //   { $unwind: '$beers' },
-
-  //   { $replaceRoot: { newRoot: '$beers' } },
-  // ])
 
   // Here is a regular expression pattern for case-insensitive search
   const regexPattern = new RegExp(searchQuery, 'i')
@@ -254,6 +193,7 @@ export const searchByName = async (req, res) => {
             { 'beers.beerName': { $regex: regexPattern } },
             { 'beers.beerType': { $regex: regexPattern } },
             { 'beers.alcoholByVolume': { $regex: regexPattern } },
+            { 'beers.fermentedType': { $regex: regexPattern } },
             // { 'beers.beerDescription': { $regex: regexPattern } },cd
             { 'beers.mouthfeel': { $regex: regexPattern } },
             { 'beers.aroma': { $regex: regexPattern } },
@@ -273,14 +213,3 @@ export const searchByName = async (req, res) => {
       .json({ message: error.message })
   }
 }
-
-// export const uploadImg = async (req, res) => {
-//   console.log(req.file)
-//   try {
-//     const newImg = await Brand.create({
-
-//     })
-//   }
-
-//   return res.status(StatusCodes.OK).json({ message: 'Image uploaded' })
-// }

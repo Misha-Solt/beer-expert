@@ -60,7 +60,7 @@ beerRoutes.get('/random-beer', getRandomBeer)
 //Detailed description of the selected brand (with all beers information)
 //????
 
-//POST http://localhost:3001/api/add-brand  ???http://localhost:3001/api/brands/create
+//POST http://localhost:3001/api/add-brand
 //Add a new brand name
 // {
 //   "brandName": "Brand name",
@@ -78,20 +78,6 @@ beerRoutes.get('/random-beer', getRandomBeer)
 // }
 
 beerRoutes.post('/add-brand', addBeerBrand)
-
-//PATCH http://localhost:3001/api/add-beer/:id ???http://localhost:3001/api/beers/create
-//Add a new beer (Update Brand by Adding a new beer)
-// {
-//   "beerName":"Weissbier",
-//   "beerType": "WEIZEN",
-//   "fermentedType": "TOP",
-//   "beerDescription":"The No. 1 Weissbier in Germany and one of the world’s favourites. Naturally cloudy and shining silky-gold in the glass under a really strong head of foam. At the first mouthful this weissbier classic has a mild aroma of banana. Finer palates detect a trace of mango and pineapple and the balance between sweet and bitter. Beer connoisseurs appreciate the fine note of yeast and the mild but sparkling mix of aromas. It is a typical beer garden beer, which brings people together all over the world.",
-//   "alcoholByVolume":"5.5",
-//   "color":"GOLD",
-//   "mouthfeel": "SWEET",
-//   "aroma": "FRUITY"
-//   "advRaiting": "9"
-// }
 
 // -------------------------------------------------
 //Searching (filtering) Beer Routes
@@ -118,7 +104,6 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 
 //the upload.single('image') is the middleware that will handle the file upload and 'image' stands for the name='image' in UploadForm component
-// beerRoutes.post('/upload', upload.single('image'), uploadImg)
 
 beerRoutes.patch('/add-beer/:id', upload.single('image'), addBeer)
 

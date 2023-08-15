@@ -10,20 +10,6 @@ export const AddBrand = () => {
   const [latitudeInput, setLatitudeInput] = useState('')
   const [longitudeInput, setLongitudeInput] = useState('')
 
-  // useEffect(() => {
-  //   window.addEventListener('beforeunload', alertUser)
-  //   return () => {
-  //     window.removeEventListener('beforeunload', alertUser)
-  //   }
-  // }, [])
-
-  // const alertUser = (e) => {
-  //   e.preventDefault()
-  //   console.log('leaving page')
-  //   setShowConfirmation(true)
-  //   e.returnValue = ''
-  // }
-
   const handleLatitudeChange = (event) => {
     const inputValue = event.target.value
     // Replace any non-digit characters except the decimal point
@@ -75,16 +61,6 @@ export const AddBrand = () => {
     setLatitudeInput('')
     setLongitudeInput('')
   }
-
-  // const navigate = useNavigate()
-  // const handleGoBack = () => {
-  //   const confirmed = window.confirm(
-  //     'Are you sure you want to leave this page?'
-  //   )
-  //   if (confirmed) {
-  //     navigate('/addBeerOrBrand')
-  //   }
-  // }
 
   const backLink = '/addBeerOrBrand'
   const nameBackLink = 'Go Back'

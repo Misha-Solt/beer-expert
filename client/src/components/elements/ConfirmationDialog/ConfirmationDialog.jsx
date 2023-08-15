@@ -20,11 +20,3 @@ const ConfirmationDialog = ({ message, onConfirm, onCancel }) => {
 }
 
 export default ConfirmationDialog
-
-// {showConfirmation && (
-//   <ConfirmationDialog
-//     message="Are you sure you want to leave this page?"
-//     onConfirm={handleConfirmationConfirm}
-//     onCancel={handleConfirmationCancel}
-//   />
-// )}

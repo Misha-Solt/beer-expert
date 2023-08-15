@@ -29,16 +29,6 @@ const AddBeerForm = () => {
     avgRating: '',
   })
 
-  // const handleFileChange = (event) => {
-  //   const selectedFile = event.target.files[0];
-
-  //   if (selectedFile) {
-  //     setSelectedFileName(selectedFile.name);
-  //   } else {
-  //     setSelectedFileName('No file selected');
-  //   }
-  // };
-
   useEffect(() => {
     fetchBrands()
     fetchEnumValues()
@@ -265,16 +255,6 @@ const AddBeerForm = () => {
                 />
                 <label className={styles.beerLabel}>Beer Name</label>
               </div>
-
-              {/* <div>
-                <input
-                  className={styles.imgInput}
-                  type="file"
-                  accept="image/*"
-                  name="image"
-                  onChange={handleImageChange}
-                />
-              </div> */}
               <div>
                 <input
                   className={styles.inputHidden}
