@@ -68,4 +68,4 @@ This application uses:
 > Oksana Sherstiuk &nbsp;&middot;&nbsp;
 > [Email](mailto:oksana.schers@gmail.com) &nbsp;&middot;&nbsp;
 > GitHub [@OksanaSherstiuk](https://github.com/OksanaSherstiuk) &nbsp;&middot;&nbsp;
-> LinkedIn [@oksana-schers](https://www.linkedin.com/in/mikhail-usoltsev/)
+> LinkedIn [@oksana-schers](https://www.linkedin.com/in/oksana-schers/)
