@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.7834b5a4.css",
-    "main.js": "/static/js/main.2eebbe88.js",
-    "static/media/light.png": "/static/media/light.7588955013db33662c32.png",
-    "static/media/dark.png": "/static/media/dark.fc1f4f3077c67a628848.png",
-    "static/media/english-flag.png": "/static/media/english-flag.841fc3c5dd8b20c06f42.png",
-    "index.html": "/index.html",
-    "main.7834b5a4.css.map": "/static/css/main.7834b5a4.css.map",
-    "main.2eebbe88.js.map": "/static/js/main.2eebbe88.js.map"
+    "main.css": "/beer-expert/static/css/main.3cc25336.css",
+    "main.js": "/beer-expert/static/js/main.b4102aec.js",
+    "static/media/light.png": "/beer-expert/static/media/light.7588955013db33662c32.png",
+    "static/media/dark.png": "/beer-expert/static/media/dark.fc1f4f3077c67a628848.png",
+    "static/media/english-flag.png": "/beer-expert/static/media/english-flag.841fc3c5dd8b20c06f42.png",
+    "index.html": "/beer-expert/index.html",
+    "main.3cc25336.css.map": "/beer-expert/static/css/main.3cc25336.css.map",
+    "main.b4102aec.js.map": "/beer-expert/static/js/main.b4102aec.js.map"
   },
   "entrypoints": [
-    "static/css/main.7834b5a4.css",
-    "static/js/main.2eebbe88.js"
+    "static/css/main.3cc25336.css",
+    "static/js/main.b4102aec.js"
   ]
 }
