@@ -21,7 +21,12 @@ const port = process.env.PORT || 3001
 //allows to parse json info from http body to req.body
 app.use(express.json())
 
-app.use(cors())
+const corsOptions = {
+  origin: 'https://www.beer-expert.de/', // Update to match frontend domain
+  optionsSuccessStatus: 200
+}
+
+app.use(cors(corsOptions))
 
 mongoose
   .connect(
