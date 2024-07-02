@@ -1,5 +1,5 @@
 {
-  "name": "beer-expert",
+  "name": "beer-de",
   "version": "1.0",
   "description": "",
   "main": "index.js",
@@ -10,8 +10,7 @@
   "scripts": {
     "start": "node server",
     "dev": "nodemon server",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm i && cd client && npm install && npm run build"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
