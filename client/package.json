@@ -3,7 +3,7 @@
     "version": "1.0",
     "private": true,
     "proxy": "http://localhost:3001",
-    "homepage": "https://misha-solt.github.io.",
+    "homepage": "https://misha-solt.github.io/beer-expert",
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^6.5.1",
         "@fortawesome/free-solid-svg-icons": "^6.5.1",
