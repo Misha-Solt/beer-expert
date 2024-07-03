@@ -43,7 +43,7 @@ This application uses:
 -   [Axios](https://axios-http.com/)
 -   [Font Awesome](https://fontawesome.com/)
 -   [GitHub](https://github.com/)
--   [Google Cloud](https://cloud.google.com/)
+-   [Google Cloud](https://cloud.google.com/) -> [Heroku](https://www.heroku.com/)
 -   [React](https://react.dev/)
 -   [Sass](https://sass-lang.com/)
 
