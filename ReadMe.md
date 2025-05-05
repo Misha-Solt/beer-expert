@@ -62,7 +62,7 @@ This application uses:
 
 > Mikhail Usoltsev &nbsp;&middot;&nbsp; > [Email](mailto:mikhail.us@gmail.com) &nbsp;&middot;&nbsp;
 > GitHub [@Misha-Solt](https://github.com/Misha-Solt) &nbsp;&middot;&nbsp;
-> LinkedIn [@michael-solt]([https://www.linkedin.com/in/michael-solt/])
+> LinkedIn [@michael-solt](https://www.linkedin.com/in/michael-solt/)
 
 > Oksana Sherstiuk &nbsp;&middot;&nbsp; > [Email](mailto:oksana.schers@gmail.com) &nbsp;&middot;&nbsp;
 > GitHub [@OksanaSherstiuk](https://github.com/OksanaSherstiuk) &nbsp;&middot;&nbsp;
